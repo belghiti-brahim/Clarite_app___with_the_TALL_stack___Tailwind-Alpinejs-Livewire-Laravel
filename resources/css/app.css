@@ -1,0 +1,30 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.btn{
+    @apply bg-sky-600 hover:bg-sky-700 text-white lg:text-xl font-bold py-2 px-4 rounded;
+}
+/* .btnDelete{
+    @apply bg-red-400 hover:bg-red-500 text-white font-normal py-1 px-2 rounded;
+}
+
+.hierarchyl1{
+    @apply font-Catamaran text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-left text-orange-400 font-extrabold leading-10 md:leading-10;
+}
+.hierarchyl2{
+    @apply font-Catamaran text-left font-extrabold text-gray-700 text-2xl;
+}
+.hierarchyl3{
+    @apply font-Catamaran text-left font-bold text-orange-400 text-2xl;
+}
+.pageContentTitle{
+    @apply font-Catamaran text-5xl text-left text-orange-400 font-black;
+}
+.modelTitle{
+    @apply sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl text-left font-light text-gray-800 leading-10 md:leading-10;
+
+} */
