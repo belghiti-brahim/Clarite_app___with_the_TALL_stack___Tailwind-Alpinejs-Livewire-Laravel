@@ -13,7 +13,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
-                Catamaran: ['Catamaran', "sans-serif"],
+                Fira: ['Fira sans', "sans-serif"],
                 // sans: ['Montserrat, "sans-serif'],
             },
             height: {
@@ -23,9 +23,9 @@ module.exports = {
                 "987": '987px',
                 "756": '756px',
             },
-           
+
         },
-        colors:{
+        colors: {
             transparent: 'transparent',
             current: 'currentColor',
             black: colors.black,
@@ -38,7 +38,7 @@ module.exports = {
             orange: colors.orange,
             pink: colors.pink,
             red: colors.red,
-            lime:colors.lime,
+            lime: colors.lime,
         },
     },
 

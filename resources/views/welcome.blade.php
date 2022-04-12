@@ -33,14 +33,14 @@
             <div class="py-5 md:py-0 container mx-auto px-4 flex items-center justify-between">
                 <div class="flex items-center gap-3 w-36">
                     <x-jet-authentication-card-logo />
-                    <p class="font-Catamaran text-orange-400 font-extrabold text-3xl">Clarté</p>
+                    <p class="font-Fira text-orange-400 font-extrabold text-3xl">Clarté</p>
                 </div>
                 @if (Route::has('login'))
                     @auth
-                        <a href="" class="btn">Votre espace du travail</a>
+                        <a href="{{route('dashboard')}}" class="btn">Your personal workspace</a>
                     @else
                         <div>
-                            <a href="{{ route('login') }}" class="btn">S'identifier</a>
+                            <a href="{{ route('login') }}" class="btn">{{ __('Login') }}</a>
                         </div>
                     @endauth
                 @endif
@@ -53,36 +53,31 @@
             <div class="container mx-auto px-4 flex flex-col items-start">
                 <div class="flex justify-start items-start flex-col gap-y-4 mb-5 sm:mb-10">
                     <h1 class="hierarchyl1">
-                        Libérez votre espace mental.<br>
-                        Organisez-vous efficacement,
-                        <br>sans stress.
+                        {{ __('Free up your mental space.') }}<br>
+                        {{ __('Organize yourself efficiently,') }}
+                        <br>{{ __('without stress.') }}
                     </h1>
-
                     <p class="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-left text-sm sm:text-lg">
-                        Avec la solution digitale "clarté".<br> Ayez l'esprit tranquille en ajoutant toutes <br> vos
-                        tâches à votre nouvelle to-do list application préférée.</p>
+                        {{ __('With the digital solution Clarity.') }}<br> {{ __('Have peace of mind by adding all') }}<br>{{ __('your tasks to your new favorite to-do list app.') }}</p>
                 </div>
                 <div class="flex justify-center items-start">
-                    <a href="{{ route('register') }}" class="btn">Rejoignez-nous</a>
+                    <a href="{{ route('register') }}" class="btn lg:text-xl">{{ __('Join us now') }}</a>
                 </div>
             </div>
         </section>
 
         <section class="max-w-8xl bg-white">
             <div class="flex flex-col items-center justify-evenly gap-8">
-                <h1 class="text-base sm:text-2xl text-sky-700">Une nouvelle approche à la TODO-list, simple, facile,
-                    utile
-                    :</h1>
-                <h1 class="font-Catamaran text-4xl text-center font-black text-gray-700 px-8 leading-[3rem]">
-                    Une personne à des <span class="text-orange-400">responsabilités </span>, étant l'une de ces
-                    responsabilités,
-                    elle initie des <span class="text-orange-400"> projets, </span>
-                    qu'elle complète
-                    en réalisant des <span class="text-orange-400"> actions.</span> </h1>
+                <h1 class="text-base sm:text-2xl text-sky-700">
+                    {{ __('A new approach to the TODO-list, simple, easy, useful:') }}</h1>
+                <h1 class="font-Fira text-4xl text-center font-black text-gray-700 px-8 leading-[3rem]">
+                    {{ __('A person with') }} <span class="text-orange-400">{{ __('responsabilities') }} </span>{{ __(', Being one of these
+                    responsibilities, he initiates') }} <span class="text-orange-400">{{ __('projects,') }}</span>
+                    {{ __('Which he completes by carrying out') }} <span class="text-orange-400">{{ __('actions.') }} </span> </h1>
             </div>
         </section>
 
-        <section class="max-w-8xl mx-auto container bg-white">
+         <section class="max-w-8xl mx-auto container bg-white">
             <div>
                 <div tabindex="0" aria-label="group of cards"
                     class="focus:outline-none mt-20 flex flex-wrap justify-center gap-10 px-4">
@@ -96,7 +91,7 @@
                         </div>
                         <div class="w-10/12">
                             <h2 tabindex="0" class="focus:outline-none text-lg font-bold leading-tight text-gray-800">
-                                Créer une liste de tâches</h2>
+                                {{ __('Create a task list') }}</h2>
                             <p tabindex="0" class="focus:outline-none text-base text-gray-600 leading-normal pt-2">Créez
                                 facilement de nouvelles tâches et listes de contrôle. Une vue élégante de la liste des
                                 tâches vous aidera à vous concentrer sur les éléments les plus importants et à agir
@@ -115,8 +110,7 @@
                         </div>
                         <div class="w-10/12">
                             <h2 tabindex="0" class="focus:outline-none text-lg font-bold leading-tight text-gray-800">
-                                Transformez
-                                une hiérarchie en liste de tâches</h2>
+                                {{ __('Turn a hierarchy in a list of tasks') }}</h2>
                             <p tabindex="0" class="focus:outline-none text-base text-gray-600 leading-normal pt-2">
                                 Une fois que vous avez ajouté des dates d'échéance, des contextes et des dépendances,
                                 MLO générera automatiquement une liste intelligente d'éléments d'action qui nécessitent
@@ -134,8 +128,7 @@
                         </div>
                         <div class="w-10/12">
                             <h2 tabindex="0" class="focus:outline-none text-lg font-bold leading-tight text-gray-800">
-                                Faites-en
-                                plus
+                                {{ __('Do more') }}
                             </h2>
                             <p tabindex="0" class="focus:outline-none text-base text-gray-600 leading-normal pt-2">
                                 La qualité de la sortie augmentera avec Todo Cloud. Affichez le travail par date de
@@ -154,9 +147,7 @@
                         </div>
                         <div class="w-10/12">
                             <h2 tabindex="0" class="focus:outline-none text-lg font-bold leading-tight text-gray-800">
-                                Atteignez
-                                vos objectifs
-                            </h2>
+                                {{ __('Reach your goals') }} </h2>
                             <p tabindex="0" class="focus:outline-none text-base text-gray-600 leading-normal pt-2">
                                 Avec un système pour tout suivre, vous pouvez vous détendre lorsque la journée est
                                 terminée avec moins de stress en sachant que Todo Cloud suit tout votre travail.</p>
@@ -164,7 +155,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> 
     </main>
     <footer class="w-full  flex items-center justify-center bg-gray-800">
         <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
