@@ -37,7 +37,7 @@
                 </div>
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{route('dashboard')}}" class="btn">Your personal workspace</a>
+                        <a href="{{ route('dashboard') }}" class="btn">Your personal workspace</a>
                     @else
                         <div>
                             <a href="{{ route('login') }}" class="btn">{{ __('Login') }}</a>
@@ -58,10 +58,17 @@
                         <br>{{ __('without stress.') }}
                     </h1>
                     <p class="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-left text-sm sm:text-lg">
-                        {{ __('With the digital solution Clarity.') }}<br> {{ __('Have peace of mind by adding all') }}<br>{{ __('your tasks to your new favorite to-do list app.') }}</p>
+                        {{ __('With the digital solution Clarity.') }}<br>
+                        {{ __('Have peace of mind by adding all') }}<br>{{ __('your tasks to your new favorite to-do list app.') }}
+                    </p>
                 </div>
                 <div class="flex justify-center items-start">
-                    <a href="{{ route('register') }}" class="btn lg:text-xl">{{ __('Join us now') }}</a>
+                    @if (Route::has('login'))
+                        @auth
+                        @else
+                            <a href="{{ route('register') }}" class="btn lg:text-xl">{{ __('Join us now') }}</a>
+                        @endauth
+                    @endif
                 </div>
             </div>
         </section>
@@ -71,13 +78,16 @@
                 <h1 class="text-base sm:text-2xl text-sky-700">
                     {{ __('A new approach to the TODO-list, simple, easy, useful:') }}</h1>
                 <h1 class="font-Fira text-4xl text-center font-black text-gray-700 px-8 leading-[3rem]">
-                    {{ __('A person with') }} <span class="text-orange-400">{{ __('responsabilities') }} </span>{{ __(', Being one of these
-                    responsibilities, he initiates') }} <span class="text-orange-400">{{ __('projects,') }}</span>
-                    {{ __('Which he completes by carrying out') }} <span class="text-orange-400">{{ __('actions.') }} </span> </h1>
+                    {{ __('A person with') }} <span class="text-orange-400">{{ __('responsabilities') }}
+                    </span>{{ __(', Being one of these
+                                                            responsibilities, he initiates') }}
+                    <span class="text-orange-400">{{ __('projects,') }}</span>
+                    {{ __('Which he completes by carrying out') }} <span
+                        class="text-orange-400">{{ __('actions.') }} </span> </h1>
             </div>
         </section>
 
-         <section class="max-w-8xl mx-auto container bg-white">
+        <section class="max-w-8xl mx-auto container bg-white">
             <div>
                 <div tabindex="0" aria-label="group of cards"
                     class="focus:outline-none mt-20 flex flex-wrap justify-center gap-10 px-4">
@@ -155,7 +165,7 @@
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>
     </main>
     <footer class="w-full  flex items-center justify-center bg-gray-800">
         <div class="md:w-2/3 w-full px-4 text-white flex flex-col">

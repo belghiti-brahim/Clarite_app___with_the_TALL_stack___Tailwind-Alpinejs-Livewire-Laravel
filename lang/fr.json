@@ -29,7 +29,15 @@
     "Reach your goals" : "Atteignez vos objectifs",
     "Whoops! Something went wrong." : "Woops! Quelque chose a mal tourné.",
     "save" : "Enregistrer",
-    "Dashboard" : "Mon espace du travail"
-
-
+    "Dashboard" : "Mon espace du travail",
+    "Define a new responsibility" : "Définir une résponsabilité",
+    "Responsibilities" : "Responsabilités",
+    "I am": "Je suis",
+    "The different aspects of my work and personal life that I wish to dedicate my time in a balanced way, hoping to achieve good results in each of them.": "Les différents aspects de mon travail et de ma vie personnelle auxquels je souhaite consacrer mon temps de manière équilibrée, en espérant obtenir de bons résultats dans chacun d'eux.",
+    "you have no responsibility" : "tu n'as aucune responsabilité",
+    "Things to be maintained at certain level of standards. What's the hats you wear?": "Les choses qui doivent être maintenues à un certain niveau de normes. Quels sont les chapeaux que vous portez?",
+     "Responsibility name" : "Le nom de la résponsabilité",
+     "A brief description" : "Une brève description",
+     "Pick a color" : "Choisissez une couleur",
+     "Choose a color for this responsibility" : "Choisissez une couluer pour cetter responsibilité"
 }

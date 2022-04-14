@@ -12,22 +12,33 @@
     @apply bg-sky-600 hover:bg-sky-700 text-white font-bold text-base py-2 px-4 rounded;
 }
  .btnDelete{
-    @apply bg-red-400 hover:bg-red-500 text-white lg:text-lg text-base font-medium py-2 px-4 rounded;
+    @apply bg-red-400 hover:bg-red-500 text-white text-base font-bold py-2 px-4 rounded;
 } 
+.navigationLink{
+    @apply inline-flex items-center px-1 pt-1 border-b-2 border-transparent font-secondary text-sm font-normal leading-5 text-gray-700 hover:text-gray-900 hover:border-orange-400 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition;
+}
+ .navigationLinkActive{
+     @apply inline-flex items-center px-1 pt-1 border-b-2 border-orange-400 font-secondary text-sm font-bold leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition;
+ }
+
+ .icon{
+     @apply w-8 h-8 hover:w-12 hover:h-12;
+ }
+
+ .modelTitle{
+    @apply sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl text-left font-light text-gray-800 leading-10 md:leading-10;
+} 
+
 
 .hierarchyl1{
-    @apply font-Fira text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-left text-orange-400 font-extrabold leading-10 md:leading-10;
+    @apply font-secondary text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-left text-orange-400 font-extrabold leading-10 md:leading-10;
 }
 .hierarchyl2{
-    @apply font-Fira text-left font-extrabold text-gray-700 text-2xl;
+    @apply font-secondary text-left font-extrabold text-gray-700 text-2xl;
 }
 .hierarchyl3{
-    @apply font-Fira text-left font-bold text-orange-400 text-2xl;
+    @apply font-secondary text-left font-bold text-orange-400 text-2xl;
 }
 .pageContentTitle{
-    @apply font-Fira text-5xl text-left text-orange-400 font-black;
+    @apply font-secondary text-5xl text-left text-orange-400 font-black;
 }
-.modelTitle{
-    @apply sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl text-left font-light text-gray-800 leading-10 md:leading-10;
-
-} 

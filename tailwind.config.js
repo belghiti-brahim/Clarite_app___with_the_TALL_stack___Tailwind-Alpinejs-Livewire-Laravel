@@ -13,8 +13,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
-                Fira: ['Fira sans', "sans-serif"],
-                // sans: ['Montserrat, "sans-serif'],
+                secondary: ['Fira sans', "sans-serif"],
             },
             height: {
                 "89": "89px",
