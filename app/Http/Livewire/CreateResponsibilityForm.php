@@ -12,6 +12,20 @@ class CreateResponsibilityForm extends Component
     public $name;
     public $description;
     public $color;
+    public $responsibility;
+
+
+    public function mount($responsibility)
+    {
+        $this->responsibility = null;
+        if ($responsibility) {
+
+            $this->responsibility = $responsibility;
+            $this->name = $this->responsibility->name;
+            $this->description = $this->responsibility->description;
+            $this->color = $this->responsibility->color;
+        }
+    }
 
     public function submit()
     {
@@ -29,13 +43,22 @@ class CreateResponsibilityForm extends Component
             $responsibilitycolor =  $this->color;
         }
 
-
-        Responsibility::create([
+        $newOrUpdatedResponsibility = [
             'name' => $this->name,
             'description' => $this->description,
             'user_id' => $userid,
             'color' => $responsibilitycolor,
-        ]);
+        ];
+
+
+        if ($this->responsibility) {
+            Responsibility::find($this->responsibility->id)->update($newOrUpdatedResponsibility);
+        } else {
+            Responsibility::create(
+                $newOrUpdatedResponsibility
+            );
+        }
+
 
         return redirect()->route('dashboard')->with('message', 'Ta nouvelle responsabilité a été crée avec succès');
     }

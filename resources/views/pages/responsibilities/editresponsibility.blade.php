@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
-                <livewire:create-responsibility-form :responsibility='null'></livewire:create-responsibility-form>
+                @livewire('edit-responsibility-form', ['responsibility' => $responsibility->id])
             </div>
         </div>
     </div>

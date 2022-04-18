@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ResponsibilityController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ResponsibilityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,6 @@ Route::middleware([
 Route::controller(ResponsibilityController::class)->group(function(){
     Route::get('/dashboard', 'index')->name('dashboard');
     Route::get('/creatresponsibility', 'create')->name('createresponsibility');
-    
+    Route::get('/editresponsibility/{responsibility}', 'edit')->name('editresponsibility'); 
 });
-
 });

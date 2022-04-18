@@ -9,12 +9,12 @@
                         {{ $responsibility->name }}</p>
                 </a>
                 <div class="flex flex-row">
-                    <a href="" class="icon">
+                    <a href="{{route('editresponsibility',['responsibility' => $responsibility->id])}}" class="icon">
                         <x-icon message="{{ asset('images/edit.png') }}" />
                     </a>
-                    <a href="" class="icon">
+                    <button  wire:click="remove({{$responsibility->id}})"  class="icon">
                         <x-icon message="{{ asset('images/delete.png') }}" />
-                    </a>
+                    </button>
                 </div>
             </div>
         @empty
@@ -24,4 +24,9 @@
             </div>
         @endforelse
     </div>
+
+    <script>
+    confirm(){
+    }
+    </script>
 </div>

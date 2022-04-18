@@ -55,9 +55,10 @@ class ResponsibilityController extends Controller
      * @param  \App\Models\Responsibility  $responsibility
      * @return \Illuminate\Http\Response
      */
-    public function edit(Responsibility $responsibility)
+    public function edit($id)
     {
-        //
+        $responsibility = Responsibility::find($id);
+        return view("pages.responsibilities.editresponsibility", compact('responsibility'));
     }
 
     /**
