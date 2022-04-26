@@ -28,5 +28,6 @@ Route::controller(ResponsibilityController::class)->group(function(){
     Route::get('/dashboard', 'index')->name('dashboard');
     Route::get('/creatresponsibility', 'create')->name('createresponsibility');
     Route::get('/editresponsibility/{responsibility}', 'edit')->name('editresponsibility'); 
+    Route::get('responsibility/{id}', 'show')->name('showresponsibility');
 });
 });

@@ -44,9 +44,10 @@ class ResponsibilityController extends Controller
      * @param  \App\Models\Responsibility  $responsibility
      * @return \Illuminate\Http\Response
      */
-    public function show(Responsibility $responsibility)
+    public function show($id)
     {
-        
+        $responsibility = Responsibility::find($id);
+        return view("pages.responsibilities.showresponsibility", compact("responsibility"));
     }
 
     /**
@@ -79,8 +80,10 @@ class ResponsibilityController extends Controller
      * @param  \App\Models\Responsibility  $responsibility
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Responsibility $responsibility)
+    public function destroy($id)
     {
-        //
+        $responsibility = Responsibility::find($id);
+        $responsibility->delete();
+        return response()->json(['success' => "la responsibilité a été suprimée avec succèss"]);
     }
 }

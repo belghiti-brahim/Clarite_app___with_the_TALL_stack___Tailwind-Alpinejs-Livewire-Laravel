@@ -12,9 +12,10 @@
                     <x-jet-label for="description" value="{{ __('A brief description') }}" />
                     <textarea id="description"
                         class="mt-1 w-full inline-flex items-center px-3 py-5 rounded-md border border-r-0 border-gray-300 bg-gray-50 text-gray-700 text-sm"
-                        type="text" name="desctiption" :value="old('email')" wire:model="description" required> </textarea>
+                        type="text" name="desctiption" :value="old('email')" wire:model="description"
+                        required> </textarea>
                 </div>
-                <x-jet-label for="color" value="{{ __('Pick a color to identify your responsibility') }}" />
+                <x-jet-label for="color" value="{{ __('Choose a color for this responsibility') }}" />
 
                 <div wire:model="color" x-data="{ color: '#37ace6ff' }" x-init="picker = new Picker($refs.button);
                 picker.onDone = rawColor => {
@@ -52,6 +53,11 @@
                     <x-jet-button class="btn ml-4">
                         {{ __('save') }}
                     </x-jet-button>
+                    @if ($color)
+                        <a href="{{ route('dashboard') }}" class="btnDelete ml-4">
+                            {{ __('cancel') }}
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>

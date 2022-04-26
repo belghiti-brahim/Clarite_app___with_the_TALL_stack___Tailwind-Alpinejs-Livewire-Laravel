@@ -4,15 +4,16 @@
             <div id="res{{ $responsibility->id }}" style="outline-style: solid;
                             outline-color: {{ $responsibility->color }};"
                 class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full min-h-[6rem] flex flex-row items-center justify-between">
-                <a href="">
+                <a href="{{ route('showresponsibility', $responsibility->id) }}">
                     <p class=' hover:font-black modelTitle'>
                         {{ $responsibility->name }}</p>
                 </a>
                 <div class="flex flex-row">
-                    <a href="{{route('editresponsibility',['responsibility' => $responsibility->id])}}" class="icon">
+                    <a href="{{ route('editresponsibility', ['responsibility' => $responsibility->id]) }}"
+                        class="icon">
                         <x-icon message="{{ asset('images/edit.png') }}" />
                     </a>
-                    <button  wire:click="remove({{$responsibility->id}})"  class="icon">
+                    <button wire:click="remove({{ $responsibility->id }})" class="icon">
                         <x-icon message="{{ asset('images/delete.png') }}" />
                     </button>
                 </div>
@@ -26,7 +27,5 @@
     </div>
 
     <script>
-    confirm(){
-    }
     </script>
 </div>

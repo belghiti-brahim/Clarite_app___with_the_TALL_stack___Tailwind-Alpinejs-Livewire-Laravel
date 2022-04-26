@@ -10,7 +10,13 @@ class Responsibility extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsTo(User::class, "user_id", "id");
+    }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class, 'responsibility_id', 'id');
     }
 }

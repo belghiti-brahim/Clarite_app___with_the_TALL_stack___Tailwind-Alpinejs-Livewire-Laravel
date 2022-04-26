@@ -40,9 +40,10 @@
             {{ $slot }}
         </main>
     </div>
+  
+
 
     @stack('modals')
-
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
     <script src="https://unpkg.com/vanilla-picker@2"></script>

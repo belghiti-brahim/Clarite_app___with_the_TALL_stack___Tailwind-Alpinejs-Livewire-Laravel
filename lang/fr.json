@@ -39,5 +39,9 @@
      "Responsibility name" : "Le nom de la résponsabilité",
      "A brief description" : "Une brève description",
      "Pick a color" : "Choisissez une couleur",
-     "Choose a color for this responsibility" : "Choisissez une couluer pour cetter responsibilité"
+     "Choose a color for this responsibility" : "Choisissez une couluer pour cetter responsibilité",
+     "Start a new project" : "commencez un nouveau projet",
+     "As" : "Etant",
+     "I'm commited to this projects:" : "Je m'engage à réaliser ces projets:",
+     "A project is anything we want to do that requires more than one action step. So it's a mechanism to remember that when we've completed that first action step, there's still something to do.":"Un projet est tout ce que nous voulons faire qui nécessite plus d'une étape d'action . C'est donc un mécanisme pour se rappeler que, lorsque nous aurons terminé cette première étape d'action, il y aura encore quelque chose à faire."
 }
