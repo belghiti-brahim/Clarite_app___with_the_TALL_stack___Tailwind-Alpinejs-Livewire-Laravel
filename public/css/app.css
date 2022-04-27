@@ -913,6 +913,12 @@ select{
 .col-span-6{
   grid-column: span 6 / span 6;
 }
+.m-9{
+  margin: 2.25rem;
+}
+.m-24{
+  margin: 6rem;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -1060,6 +1066,9 @@ select{
 .h-20{
   height: 5rem;
 }
+.h-full{
+  height: 100%;
+}
 .h-40{
   height: 10rem;
 }
@@ -1069,17 +1078,14 @@ select{
 .h-\[667px\]{
   height: 667px;
 }
-.h-full{
-  height: 100%;
-}
 .min-h-screen{
   min-height: 100vh;
 }
-.min-h-\[6rem\]{
-  min-height: 6rem;
-}
 .min-h-\[8rem\]{
   min-height: 8rem;
+}
+.min-h-\[6rem\]{
+  min-height: 6rem;
 }
 .w-5{
   width: 1.25rem;
@@ -1267,15 +1273,15 @@ select{
 .gap-10{
   gap: 2.5rem;
 }
+.gap-y-3{
+  row-gap: 0.75rem;
+}
 .gap-x-2{
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
 }
 .gap-y-4{
   row-gap: 1rem;
-}
-.gap-y-3{
-  row-gap: 0.75rem;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
@@ -1514,13 +1520,13 @@ select{
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
 .px-8{
   padding-left: 2rem;
   padding-right: 2rem;
+}
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 .pt-6{
   padding-top: 1.5rem;
@@ -2396,6 +2402,9 @@ select{
   }
   .lg\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .lg\:px-8{
     padding-left: 2rem;
