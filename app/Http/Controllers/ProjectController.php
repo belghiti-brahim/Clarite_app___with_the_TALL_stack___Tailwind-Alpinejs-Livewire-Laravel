@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Models\Responsibility;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
@@ -17,5 +18,10 @@ class ProjectController extends Controller
     {
         $archive = "arcived projects";
         return view("pages.projects.archivedprojects", compact("archive"));
+    }
+    public function createwithinresponsibility($id)
+    {
+        $responsibility = Responsibility::find($id);
+        return view('pages.projects.create_project_from_responsibility', compact("responsibility"));
     }
 }

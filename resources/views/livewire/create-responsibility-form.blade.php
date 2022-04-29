@@ -1,18 +1,27 @@
 <div>
     <form wire:submit.prevent="submit">
         @csrf
+        @if ($errors->any())
+            <div class="bg-red-600 text-white">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="shadow sm:rounded-md sm:overflow-hidden">
             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                 <div>
                     <x-jet-label for="name" value="{{ __('Responsibility name') }}" />
                     <x-jet-input id="name" class="block mt-1 w-full" type="text" wire:model="name" name="name"
-                        :value="old('name')" required autofocus autocomplete="name" />
+                         autofocus autocomplete="name" />
                 </div>
                 <div class="mt-4">
                     <x-jet-label for="description" value="{{ __('A brief description') }}" />
                     <textarea id="description"
                         class="mt-1 w-full inline-flex items-center px-3 py-5 rounded-md border border-r-0 border-gray-300 bg-gray-50 text-gray-700 text-sm"
-                        type="text" name="desctiption" :value="old('email')" wire:model="description"
+                        type="text" name="desctiption"  wire:model="description"
                         required> </textarea>
                 </div>
                 <x-jet-label for="color" value="{{ __('Choose a color for this responsibility') }}" />

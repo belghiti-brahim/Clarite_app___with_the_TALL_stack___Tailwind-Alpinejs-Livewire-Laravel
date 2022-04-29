@@ -46,8 +46,10 @@ class ResponsibilityController extends Controller
      */
     public function show($id)
     {
+
+        $res ="to test for and show responsibility projects";
         $responsibility = Responsibility::find($id);
-        return view("pages.responsibilities.showresponsibility", compact("responsibility"));
+        return view("pages.responsibilities.showresponsibility", compact("responsibility", "res"));
     }
 
     /**

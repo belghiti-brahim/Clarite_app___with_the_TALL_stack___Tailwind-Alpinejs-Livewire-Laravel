@@ -1,10 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-jet-nav-link href="" :active="request()->routeIs('')">
+        <x-jet-nav-link href="{{ route('createprojectfromresponsibility', $responsibility->id) }}" :active="request()->routeIs('')">
             {{ __('Start a new project') }}
-        </x-jet-nav-link>
-        <x-jet-nav-link href="" :active="request()->routeIs('')">
-            {{ __('archived projects') }}
         </x-jet-nav-link>
     </x-slot>
 
@@ -23,7 +20,10 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 
-                    @livewire('show-projects' , ['responsibility' => $responsibility->id])
+                    {{-- @livewire('show-projects' , ['responsibility' => $responsibility->id]) --}}
+                    <livewire:show-projects :responsibility="$responsibility" :archive='$res'>
+                    </livewire:show-projects>
+
                 </div>
             </div>
         </div>
