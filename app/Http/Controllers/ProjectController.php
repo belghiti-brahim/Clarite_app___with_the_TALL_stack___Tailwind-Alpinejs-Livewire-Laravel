@@ -11,17 +11,24 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return view("pages.projects.indexallprojects");
+        return view("pages.projects.index_all_projects");
     }
 
     public function archivedProjects()
     {
         $archive = "arcived projects";
-        return view("pages.projects.archivedprojects", compact("archive"));
+        return view("pages.projects.archived_projects", compact("archive"));
     }
-    public function createwithinresponsibility($id)
+    public function createFromResponsibility($id)
     {
         $responsibility = Responsibility::find($id);
         return view('pages.projects.create_project_from_responsibility', compact("responsibility"));
+    }
+
+    public function edit($id)
+    {
+        $project = Project::find($id);
+        $responsibility = Responsibility::find($project->responsibility->id);
+        return view("pages.projects.edit_project", compact('project', 'responsibility'));
     }
 }

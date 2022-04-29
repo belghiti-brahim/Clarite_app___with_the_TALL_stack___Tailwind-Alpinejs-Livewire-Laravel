@@ -14,7 +14,7 @@ class ResponsibilityController extends Controller
      */
     public function index()
     {
-        return view('pages.responsibilities.responsibilitiesIndex');
+        return view('pages.responsibilities.responsibilities_index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ResponsibilityController extends Controller
      */
     public function create()
     {
-        return view("pages.responsibilities.createresponsibility");
+        return view("pages.responsibilities.create_responsibility");
     }
 
     /**
@@ -49,7 +49,7 @@ class ResponsibilityController extends Controller
 
         $res ="to test for and show responsibility projects";
         $responsibility = Responsibility::find($id);
-        return view("pages.responsibilities.showresponsibility", compact("responsibility", "res"));
+        return view("pages.responsibilities.show_responsibility", compact("responsibility", "res"));
     }
 
     /**
@@ -61,7 +61,7 @@ class ResponsibilityController extends Controller
     public function edit($id)
     {
         $responsibility = Responsibility::find($id);
-        return view("pages.responsibilities.editresponsibility", compact('responsibility'));
+        return view("pages.responsibilities.edit_responsibility", compact('responsibility'));
     }
 
     /**

@@ -12,15 +12,20 @@ class CreateProjectForm extends Component
     public $projectName;
     public $projectDescription;
     public $parentProjectName;
+    public $project;
 
-    public function mount(Responsibility $responsibility)
+    public function mount(Responsibility $responsibility, $project)
     {
         $this->responsibility = $responsibility;
+        $this->project = null;
 
-        // $this->projectName = $projectName;
-        // $this->projectDescription = $projectDescription;
-        // $this->parentResponsibilityName = $parentResponsibilityName;
-        // $this->parentProjectName = $parentProjectName;
+
+        if ($project) {
+            $this->project = $project;
+            $this->projectName = $this->project->name;
+            $this->projectDescription = $this->project->definition;
+            $this->parentProjectName = $this->project->project_id;
+        }
     }
 
     public function submit()
@@ -30,18 +35,29 @@ class CreateProjectForm extends Component
             [
                 "projectName" => 'required',
                 "projectDescription" => 'required',
-                "parentProjectName" => 'required'
             ]
         );
+
+        if ($this->parentProjectName === "undefined") {
+            $parentProject = null;
+        } else {
+            $parentProject  = $this->parentProjectName;
+        }
 
         $newOrUpdatedProject =   [
             "name" => $this->projectName,
             "definition" => $this->projectDescription,
             "responsibility_id" => $this->responsibility->id,
-            "project_id" => $this->parentProjectName
+            "project_id" => $parentProject
         ];
 
-        Project::create($newOrUpdatedProject);
+        if ($this->project) {
+            Project::find($this->project->id)->update($newOrUpdatedProject);
+        } else {
+            Project::create($newOrUpdatedProject);
+        }
+        $id = $this->responsibility->id;
+        redirect()->route('showresponsibility', $id)->with('message', 'Ta nouvelle responsabilité a été crée avec succès');
     }
 
     public function render()

@@ -1,4 +1,3 @@
- <div class="mt-5 md:mt-0 md:col-span-2">
      <form wire:submit.prevent="submit">
          @csrf
          <div class="shadow sm:rounded-md sm:overflow-hidden">
@@ -50,21 +49,21 @@
                          class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
                          <option selected>{{ __('Open this select menu') }}</option>
                          <option value="">{{ __('None') }}</option>
-                         @forelse ($responsibility->projects as $project)
-                             @if ($project->project_id != null)
-                                 <option class="hidden" value={{ $project->id }}>
-                                     {{ $project->name }}
-                                 @else
-                                     @if ($project->archive === 0)
-                                 <option class="hidden" value={{ $project->id }}>
-                                     {{ $project->name }}
-                                 @else
-                                 <option value={{ $project->id }}>{{ $project->name }}
-                                 </option>
+                         @forelse ($responsibility->projects as $projects)
+                             @if ($projects->project_id || $projects->id == $project->id)
+                                 <option class="hidden" value={{ $projects->id }}>
+                                     {{ $projects->name }}</option>
+                             @else
+                                 @if ($projects->archive === 0)
+                                     <option class="hidden" value={{ $projects->id }}>
+                                         {{ $projects->name }}
+                                     @else
+                                     <option value={{ $projects->id }}>{{ $projects->name }}
+                                     </option>
+                                 @endif
                              @endif
-                         @endif
-                     @empty
-                         <option>{{ __("you don't have any projects created.") }}</option>
+                         @empty
+                             <option>{{ __("you don't have any projects created.") }}</option>
                          @endforelse
                      </select>
 
@@ -72,7 +71,12 @@
              </div>
              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                  <button type="submit" class="btn">Save</button>
+                 @if ($project)
+                     <a href="{{ route('dashboard') }}" class="btnDelete ml-4">
+                         {{ __('cancel') }}
+                     </a>
+                 @endif
              </div>
+
          </div>
      </form>
- </div>

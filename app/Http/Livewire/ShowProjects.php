@@ -20,6 +20,12 @@ class ShowProjects extends Component
         $this->archive = $archive;
     }
 
+    public function remove($projectId)
+    {
+        $project = Project::find($projectId);
+        $project->delete();
+    }
+
     public function render()
     {
 

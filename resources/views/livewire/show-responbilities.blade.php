@@ -9,7 +9,7 @@
                         {{ $responsibility->name }}</p>
                 </a>
                 <div class="flex flex-row">
-                    <a href="{{ route('editresponsibility', ['responsibility' => $responsibility->id]) }}"
+                    <a href="{{ route('editresponsibility', $responsibility) }}"
                         class="icon">
                         <x-icon message="{{ asset('images/edit.png') }}" />
                     </a>

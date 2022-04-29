@@ -22,8 +22,6 @@
 
                     {{-- @livewire('show-projects' , ['responsibility' => $responsibility->id]) --}}
                     <livewire:show-projects :responsibility="$responsibility" :archive='$res'>
-                    </livewire:show-projects>
-
                 </div>
             </div>
         </div>

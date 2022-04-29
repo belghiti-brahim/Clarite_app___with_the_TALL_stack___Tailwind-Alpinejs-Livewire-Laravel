@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                    <livewire:create-project-form :responsibility='$responsibility' :project='null'>
+                    @livewire('edit-project-form', ['responsibility' => $responsibility, 'project' => $project])
                 </div>
             </div>
         </div>

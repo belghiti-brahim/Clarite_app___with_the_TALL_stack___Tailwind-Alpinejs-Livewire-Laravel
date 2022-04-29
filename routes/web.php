@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResponsibilityController;
+use App\Models\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,15 +28,16 @@ Route::middleware([
 
     Route::controller(ResponsibilityController::class)->group(function () {
         Route::get('/dashboard', 'index')->name('dashboard');
-        Route::get('/creatresponsibility', 'create')->name('createresponsibility');
-        Route::get('/editresponsibility/{responsibility}', 'edit')->name('editresponsibility');
+        Route::get('/define_responsibility', 'create')->name('createresponsibility');
+        Route::get('/edit_responsibility/{responsibility}', 'edit')->name('editresponsibility');
         Route::get('responsibility/{id}', 'show')->name('showresponsibility');
 
     });
     Route::controller(ProjectController::class)->group(function () {
         Route::get('/active_projects', 'index')->name('projects');
-        Route::get('/archived_projcets', 'archivedProjects')->name("achivedProjects");
-        Route::get('createproject_for_responsibility/{id}', "createwithinresponsibility")->name("createprojectfromresponsibility");
+        Route::get('/archived_projcets', 'archivedProjects')->name('achivedProjects');
+        Route::get('new_project_for_responsibility/{id}', 'createFromResponsibility')->name('createprojectfromresponsibility');
+        Route::get('/edit_project/{Project}', 'edit')->name('editProject');
 
     });
 });

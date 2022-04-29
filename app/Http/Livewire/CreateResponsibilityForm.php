@@ -15,6 +15,7 @@ class CreateResponsibilityForm extends Component
     public $responsibility;
 
 
+
     public function mount($responsibility)
     {
         $this->responsibility = null;
