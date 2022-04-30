@@ -5,10 +5,7 @@
             <x-jet-nav-link href="{{ route('achivedProjects') }}" :active="request()->routeIs('createresponsability')">
                 {{ __('Archived') }}
             </x-jet-nav-link>
-            <x-jet-nav-link href="" :active="request()->routeIs('createresponsability')">
-                {{ __('Start a new project') }}
-            </x-jet-nav-link>
-        </x-jet-nav-link>
+         </x-jet-nav-link>
     </x-slot>
 
     <div class="ml-auto py-5">

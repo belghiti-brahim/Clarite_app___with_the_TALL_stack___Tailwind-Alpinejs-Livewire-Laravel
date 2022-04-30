@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-8">
     <div>
         <label for="resonsibilityId" class="block text-sm font-medium text-gray-700">
-            {{__("find a project")}} </label>
+            {{__("Find a project")}} </label>
         <div class="mt-1 flex rounded-md shadow-sm">
 
             <input type="text" name="findproject" id="resonsibilityId" wire:model="search"
