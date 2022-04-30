@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
 class User extends Authenticatable
 {
@@ -62,5 +63,10 @@ class User extends Authenticatable
 
     public function responsibilities(){
         return $this->hasMany(Responsibility::class, "user_id", 'id');
+    }
+
+    public function projects()
+    {
+        return $this->hasManyThrough(Project::class, Responsibility::class);
     }
 }

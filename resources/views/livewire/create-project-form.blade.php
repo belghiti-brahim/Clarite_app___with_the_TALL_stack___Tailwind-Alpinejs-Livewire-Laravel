@@ -50,7 +50,7 @@
                          <option selected>{{ __('Open this select menu') }}</option>
                          <option value="">{{ __('None') }}</option>
                          @forelse ($responsibility->projects as $projects)
-                             @if ($projects->project_id || $projects->id == $project->id)
+                             @if ($projects->project_id || $project ? $projects->id === $project->id : ""  )
                                  <option class="hidden" value={{ $projects->id }}>
                                      {{ $projects->name }}</option>
                              @else

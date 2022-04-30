@@ -15,7 +15,7 @@
                 <div>
                     <x-jet-label for="name" value="{{ __('Responsibility name') }}" />
                     <x-jet-input id="name" class="block mt-1 w-full" type="text" wire:model="name" name="name" autofocus
-                        autocomplete="name" />
+                       required autocomplete="name" />
                 </div>
                 <div class="mt-4">
                     <x-jet-label for="description" value="{{ __('A brief description') }}" />

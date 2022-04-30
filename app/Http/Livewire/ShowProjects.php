@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ShowProjects extends Component
 {
-
     public $responsibility;
     public $archive;
     public $active;
+
 
     public function mount(Responsibility $responsibility, $archive)
     {
@@ -28,7 +28,6 @@ class ShowProjects extends Component
 
     public function render()
     {
-
         if ($this->archive) {
             if ($this->archive === "to test for and show responsibility projects") {
                 $responsibilityId =  $this->responsibility->id;
@@ -39,17 +38,24 @@ class ShowProjects extends Component
                     ->join('responsibilities', 'responsibilities.id', '=', 'projects.responsibility_id')
                     ->join('users', 'users.id', '=', 'responsibilities.user_id')
                     ->where('user_id', $authid);
-                $projects = $projectss->where("archive", "=", "0")->with("children")->whereNull('project_id')->orderBy('created_at', 'desc')->paginate(0);
+
+
+                $projects = $projectss->where("archive", "=", "0")->with("children")->whereNull('project_id')->orderBy('created_at', 'desc')->where('name', '=', "%{$this->search}%")->paginate(0);
             }
         } else {
             $authid = Auth::user()->id;
+
+
+
+
             $projectss = Project::select('projects.*')
                 ->join('responsibilities', 'responsibilities.id', '=', 'projects.responsibility_id')
                 ->join('users', 'users.id', '=', 'responsibilities.user_id')
                 ->where('user_id', $authid);
-            $projects = $projectss->where("archive", "=", "1")->with("children")->whereNull('project_id')->orderBy('created_at', 'desc')->paginate(0);
-        }
 
+
+            $projects = $projectss->where("archive", "=", "1")->with("children")->whereNull('project_id')->orderBy('created_at', 'desc')->paginate(8);
+        }
         return view('livewire.show-projects', compact("projects"));
     }
 }
