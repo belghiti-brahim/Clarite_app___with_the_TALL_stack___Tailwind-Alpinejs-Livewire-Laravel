@@ -28,11 +28,11 @@
                     <a class="h-full w-full" href="">
                         <p class="w-full hover:font-black modelTitle">{{ $project->project_name }} </p>
                     </a>
-                    <div class="flex flex-row gap-2">
+                    <div class="flex flex-row">
                         <a href="{{ route('editProject', $project) }}">
                            <x-icon imgPath="{{ asset('images/edit.png') }}" />
                         </a>
-                        <button wire:click="">
+                        <button wire:click="archiveProject({{$project->id}})">
                             <x-icon imgPath="{{ asset('images/inbox.png') }}" />
                         </button>
                         <button wire:click="remove({{ $project->id }})">
@@ -68,13 +68,13 @@
                         <p class="w-full hover:font-bold">{{ $project->project_name }} </p>
                     </a>
                     <div class="flex flex-row">
-                        <a href="{{ route('editProject', $project) }}" class="w-6 h-6 hover:w-8 hover:h-8">
-                            <img src="{{ asset('images/edit.png') }}" alt="edit icon">
+                        <a href="{{ route('editProject', $project) }}">
+                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
                         </a>
-                        <a href="" class="w-6 h-6 hover:w-8 hover:h-8"> <img src="{{ asset('images/inbox.png') }}"
-                                alt="archive icon">
-                        </a>
-                        <button wire:click="remove({{ $project->id }})" class="icon">
+                        <button wire:click="archiveProject({{$project->id}})">  
+                          <x-icon imgPath="{{ asset('images/inbox.png') }}" />
+                        </button>
+                        <button wire:click="remove({{ $project->id }})">
                             <x-icon imgPath="{{ asset('images/delete.png') }}" />
                         </button>
 
@@ -88,10 +88,9 @@
                             <div class="flex flex-row">
                                 <a href="{{ route('editProject', $subproject) }}"
                                     class="w-6 h-6 hover:w-8 hover:h-8">
-                                    <img src="{{ asset('images/edit.png') }}" alt="edit icon">
+                                    <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                 </a>
-
-                                <button wire:click="remove({{ $ubproject->id }})" class="icon">
+                                <button wire:click="remove({{ $subproject->id }})">
                                     <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                 </button>
                             </div>
