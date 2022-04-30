@@ -18,7 +18,6 @@
         </div>
         <div class="md:w-3/5 ml-auto py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 
                     {{-- @livewire('show-projects' , ['responsibility' => $responsibility->id]) --}}
                     <livewire:show-projects :responsibility="$responsibility" :archive='$res'>

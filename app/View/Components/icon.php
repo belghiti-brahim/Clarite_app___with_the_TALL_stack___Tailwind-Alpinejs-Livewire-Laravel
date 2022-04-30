@@ -6,16 +6,17 @@ use Illuminate\View\Component;
 
 class icon extends Component
 {
+     public $imgPath;
 
-    public $message;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct($imgPath)
     {
-        $this->message = $message;
+        $this->imgPath = $imgPath;
+ 
     }
 
     /**

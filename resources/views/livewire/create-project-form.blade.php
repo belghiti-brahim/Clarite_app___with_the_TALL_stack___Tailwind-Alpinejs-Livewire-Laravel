@@ -42,23 +42,27 @@
                      </select>
 
                  </div>
-                 <div class="col-span-6 sm:col-span-3">
+                    <div class="col-span-6 sm:col-span-3">
                      <label for="project"
                          class="block text-sm font-medium text-gray-700">{{ __('This project belongs to this project') }}</label>
                      <select id="project" name="project" autocomplete="project-name" wire:model="parentProjectName"
                          class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                         <option selected>{{ __('Open this select menu') }}</option>
-                         <option value="">{{ __('None') }}</option>
+                         {{-- <option selected>{{ __('Open this select menu') }}</option> --}}
+                         <option value=null>{{ __('None') }}</option>
                          @forelse ($responsibility->projects as $projects)
-                             @if ($projects->project_id || $project ? $projects->id === $project->id : ""  )
+                       
+                             @if($project && $projects->id === $project->id)
                                  <option class="hidden" value={{ $projects->id }}>
-                                     {{ $projects->name }}</option>
+                                     {{ $projects->project_name }}</option>
+                             @elseif($projects->project_id != null)
+                                <option class="hidden" value={{ $projects->id }}>
+                                     {{ $projects->project_name }}</option>
                              @else
                                  @if ($projects->archive === 0)
                                      <option class="hidden" value={{ $projects->id }}>
-                                         {{ $projects->name }}
+                                         {{ $projects->project_name }}
                                      @else
-                                     <option value={{ $projects->id }}>{{ $projects->name }}
+                                     <option value={{ $projects->id }}>{{ $projects->project_name }}
                                      </option>
                                  @endif
                              @endif

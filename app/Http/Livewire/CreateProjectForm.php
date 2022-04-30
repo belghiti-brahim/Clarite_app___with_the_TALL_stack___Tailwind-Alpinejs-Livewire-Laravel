@@ -22,7 +22,7 @@ class CreateProjectForm extends Component
 
         if ($project) {
             $this->project = $project;
-            $this->projectName = $this->project->name;
+            $this->projectName = $this->project->project_name;
             $this->projectDescription = $this->project->definition;
             $this->parentProjectName = $this->project->project_id;
         }
@@ -38,21 +38,22 @@ class CreateProjectForm extends Component
             ]
         );
 
-        if ($this->parentProjectName === "undefined") {
+        if ($this->parentProjectName === 'null') {
             $parentProject = null;
         } else {
             $parentProject  = $this->parentProjectName;
         }
 
         $newOrUpdatedProject =   [
-            "name" => $this->projectName,
+            "project_name" => $this->projectName,
             "definition" => $this->projectDescription,
             "responsibility_id" => $this->responsibility->id,
             "project_id" => $parentProject
         ];
 
         if ($this->project) {
-            Project::find($this->project->id)->update($newOrUpdatedProject);
+$selectedProject =Project::find($this->project->id);    
+  $selectedProject->update($newOrUpdatedProject);
         } else {
             Project::create($newOrUpdatedProject);
         }

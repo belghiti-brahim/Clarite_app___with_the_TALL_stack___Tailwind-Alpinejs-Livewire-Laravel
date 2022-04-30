@@ -10,11 +10,11 @@
                 </a>
                 <div class="flex flex-row">
                     <a href="{{ route('editresponsibility', $responsibility) }}"
-                        class="icon">
-                        <x-icon message="{{ asset('images/edit.png') }}" />
+                        >
+                        <x-icon imgPath="{{ asset('images/edit.png') }}"  />
                     </a>
-                    <button wire:click="remove({{ $responsibility->id }})" class="icon">
-                        <x-icon message="{{ asset('images/delete.png') }}" />
+                    <button wire:click="remove({{ $responsibility->id }})" >
+                        <x-icon imgPath="{{ asset('images/delete.png') }}" />
                     </button>
                 </div>
             </div>

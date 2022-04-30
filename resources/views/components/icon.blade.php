@@ -1,4 +1,3 @@
-<div>
-    <img src="{{$message}}" alt="deltebutton">
-
+<div class="icon">
+    <img  src="{{$imgPath}}">
 </div>

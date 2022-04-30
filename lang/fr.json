@@ -50,5 +50,6 @@
     "This project belongs to this project" : "Ce projet est le sous projet de",
     "Open this select menu": "Ouvrez ce menu de sélection",
     "None": "aucun",
-    "you don't have any projects created." : "tu n'a aucun projet creé."
+    "you don't have any projects created." : "tu n'a aucun projet creé.",
+    "find a project" : "Chercher un projet"
 }

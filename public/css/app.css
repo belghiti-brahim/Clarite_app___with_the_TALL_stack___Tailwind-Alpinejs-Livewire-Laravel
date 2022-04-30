@@ -1264,14 +1264,17 @@ select{
 .gap-1{
   gap: 0.25rem;
 }
-.gap-3{
-  gap: 0.75rem;
-}
 .gap-8{
   gap: 2rem;
 }
+.gap-3{
+  gap: 0.75rem;
+}
 .gap-10{
   gap: 2.5rem;
+}
+.gap-2{
+  gap: 0.5rem;
 }
 .gap-y-3{
   row-gap: 0.75rem;
@@ -1323,9 +1326,6 @@ select{
 }
 .rounded-full{
   border-radius: 9999px;
-}
-.rounded-none{
-  border-radius: 0px;
 }
 .rounded-l-md{
   border-top-left-radius: 0.375rem;
@@ -2299,6 +2299,9 @@ select{
   .sm\:justify-between{
     justify-content: space-between;
   }
+  .sm\:justify-around{
+    justify-content: space-around;
+  }
   .sm\:overflow-hidden{
     overflow: hidden;
   }
@@ -2421,11 +2424,23 @@ select{
   .lg\:w-10\/12{
     width: 83.333333%;
   }
+  .lg\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-  .lg\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .lg\:justify-around{
+    justify-content: space-around;
+  }
+  .lg\:gap-12{
+    gap: 3rem;
+  }
+  .lg\:gap-64{
+    gap: 16rem;
+  }
+  .lg\:gap-24{
+    gap: 6rem;
   }
   .lg\:px-8{
     padding-left: 2rem;
