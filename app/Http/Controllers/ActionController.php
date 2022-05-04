@@ -16,9 +16,17 @@ class ActionController extends Controller
      */
     public function todaysActions()
     {
-   
+           return view("pages.actions.todays_actions");
+    }
 
-        return view("pages.actions.todays_actions");
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function thisWeekActions()
+    {
+           return view("pages.actions.this_week_actions");
     }
 
     /**
@@ -59,9 +67,9 @@ class ActionController extends Controller
      * @param  \App\Models\Action  $action
      * @return \Illuminate\Http\Response
      */
-    public function edit(Action $action)
+    public function edit($id)
     {
-        //
+        return view("pages.actions.edit_action");
     }
 
     /**

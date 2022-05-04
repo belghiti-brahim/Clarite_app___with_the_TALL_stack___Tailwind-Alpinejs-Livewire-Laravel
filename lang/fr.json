@@ -56,5 +56,12 @@
     "you have no action" : "tu n'as aucune action",
     "To do": "À faire",
     "Doing" : "En cours",
-    "Done" : "Fait"
+    "Done" : "Fait",
+    "Monday" : "Lundi",
+    "Tuesday" : "Mardi",
+    "Wednesday" : "Mercredi",
+    "Thursday" : "Jeudi",
+    "Friday" : "Vendredi",
+    "Saturday" : "Samedi",
+    "Sunday": "Dimanche"
 }

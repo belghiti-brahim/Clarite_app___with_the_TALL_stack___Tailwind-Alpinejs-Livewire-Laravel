@@ -41,6 +41,8 @@ Route::middleware([
         Route::get('/show_project/{id}', 'show')->name('showProject');
     });
     Route::controller(ActionController::class)->group(function () {
-        Route::get('/today_actions', 'todaysActions')->name("todaysActions");
+        Route::get('/todays_actions', 'todaysActions')->name('todaysActions');
+        Route::get('/this_week_actions', 'thisWeekActions')->name('thisWeekActions');
+        Route::get('/edit_action/{id}', 'edit')->name('editaction');
     });
 });
