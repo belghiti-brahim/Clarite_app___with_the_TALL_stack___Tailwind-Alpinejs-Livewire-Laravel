@@ -102,7 +102,7 @@
     @empty
         <div
             class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full h-40 flex flex-row items-center justify-between">
-            <p class="modelTitle">tu n'as aucun projet</p>
+            <p class="modelTitle">{{ __('you have no project') }}</p>
         </div>
     @endforelse
 </div>

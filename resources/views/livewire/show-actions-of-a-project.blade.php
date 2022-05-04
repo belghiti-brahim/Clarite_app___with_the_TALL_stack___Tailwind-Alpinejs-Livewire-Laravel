@@ -12,13 +12,13 @@
                             <p class="">{{ $action->description }}</p>
                         </a>
                         <div class="flex flex-row">
-                            <button wire:click="" class="icon">
+                            <button wire:click="startAction({{$action->id}})" class="icon">
                                 <x-icon imgPath="{{ asset('images/start.png') }}" />
                             </button>
                             <a href="">
                                 <x-icon imgPath="{{ asset('images/edit.png') }}" />
                             </a>
-                            <button wire:click="" class="icon">
+                            <button wire:click="remove({{ $action->id }})" class="icon">
                                 <x-icon imgPath="{{ asset('images/delete.png') }}" />
                             </button>
                         </div>
@@ -27,8 +27,8 @@
             @endforeach
         @empty
             <div
-                class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-row items-center justify-between">
-                <p class="hierarchyl2">{{ __('You have no action') }}</p>
+                class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full h-40 flex flex-row items-center justify-between">
+                <p class="modelTitle">{{ __('you have no action') }}</p>
             </div>
         @endforelse
     </div>
@@ -45,13 +45,13 @@
                             <p class="">{{ $action->description }}</p>
                         </a>
                         <div class="flex flex-row">
-                            <button wire:click="" class="icon">
+                            <button wire:click="actionIsDone({{$action->id}})" class="icon">
                                 <x-icon imgPath="{{ asset('images/done.png') }}" />
                             </button>
                             <a href="">
                                 <x-icon imgPath="{{ asset('images/edit.png') }}" />
                             </a>
-                            <button wire:click="" class="icon">
+                            <button wire:click="remove({{ $action->id }})" class="icon">
                                 <x-icon imgPath="{{ asset('images/delete.png') }}" />
                             </button>
                         </div>
@@ -60,8 +60,8 @@
             @endforeach
         @empty
             <div
-                class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-row items-center justify-between">
-                <p class="hierarchyl2">{{ __('You have no action') }}</p>
+                class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full h-40 flex flex-row items-center justify-between">
+                <p class="modelTitle">{{ __('you have no action') }}</p>
             </div>
         @endforelse
     </div>
@@ -82,7 +82,7 @@
                             <a href="">
                                 <x-icon imgPath="{{ asset('images/edit.png') }}" />
                             </a>
-                            <button wire:click="" class="icon">
+                            <button wire:click="remove({{ $action->id }})" class="icon">
                                 <x-icon imgPath="{{ asset('images/delete.png') }}" />
                             </button>
                         </div>
@@ -91,8 +91,8 @@
             @endforeach
         @empty
             <div
-                class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-row items-center justify-between">
-                <p class="hierarchyl2">{{ __('You have no action') }}</p>
+                class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full h-40 flex flex-row items-center justify-between">
+                <p class="modelTitle">{{ __('you have no action') }}</p>
             </div>
         @endforelse
     </div>

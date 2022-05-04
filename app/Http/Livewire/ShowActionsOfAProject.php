@@ -16,6 +16,26 @@ class ShowActionsOfAProject extends Component
         $this->project = $project;
     }
 
+    public function remove($actionId)
+    {
+        $action = Action::find($actionId);
+        $action->delete();
+    }
+
+    public function startAction($actionId)
+    {
+        $action = Action::find($actionId);
+        $status = 2;
+        $action->contexts()->sync($status);
+    }
+
+    public function actionIsDone($actionId)
+    {
+        $action = Action::find($actionId);
+        $status = 3;
+        $action->contexts()->sync($status);
+    }
+
     public function render()
     {
         $projectId = $this->project->id;
