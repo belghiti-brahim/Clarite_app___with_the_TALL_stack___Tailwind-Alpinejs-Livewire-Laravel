@@ -4,15 +4,14 @@
         @forelse ($actions as $action)
             @foreach ($action->contexts as $contextaction)
                 @if ($contextaction->pivot->context_id == 1)
-                    <div id="action{{ $action->id }}"
-                        style="outline-style: solid;
+                    <div style="outline-style: solid;
                                         outline-color: {{ $project->responsibility->color }};  outline-width: medium;"
                         class="px-4 py-2 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-row items-center justify-between">
                         <a href="">
                             <p class="">{{ $action->description }}</p>
                         </a>
                         <div class="flex flex-row">
-                            <button wire:click="startAction({{$action->id}})" class="icon">
+                            <button wire:click="startAction({{ $action->id }})" class="icon">
                                 <x-icon imgPath="{{ asset('images/start.png') }}" />
                             </button>
                             <a href="">
@@ -37,15 +36,14 @@
         @forelse ($actions as $action)
             @foreach ($action->contexts as $contextaction)
                 @if ($contextaction->pivot->context_id == 2)
-                    <div id="action{{ $action->id }}"
-                        style="outline-style: solid;
+                    <div style="outline-style: solid;
                                         outline-color: {{ $project->responsibility->color }};  outline-width: medium;"
                         class="px-4 py-2 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-row items-center justify-between">
                         <a href="">
                             <p class="">{{ $action->description }}</p>
                         </a>
                         <div class="flex flex-row">
-                            <button wire:click="actionIsDone({{$action->id}})" class="icon">
+                            <button wire:click="actionIsDone({{ $action->id }})" class="icon">
                                 <x-icon imgPath="{{ asset('images/done.png') }}" />
                             </button>
                             <a href="">
@@ -71,8 +69,7 @@
         @forelse ($actions as $action)
             @foreach ($action->contexts as $contextaction)
                 @if ($contextaction->pivot->context_id == 3)
-                    <div id="action{{ $action->id }}"
-                        style="outline-style: solid;
+                    <div style="outline-style: solid;
                                         outline-color: {{ $project->responsibility->color }};  outline-width: medium;"
                         class="px-4 py-2 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-row items-center justify-between">
                         <a href="">

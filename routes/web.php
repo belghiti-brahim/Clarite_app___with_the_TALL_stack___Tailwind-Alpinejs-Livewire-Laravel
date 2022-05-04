@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActionController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResponsibilityController;
@@ -31,7 +32,6 @@ Route::middleware([
         Route::get('/define_responsibility', 'create')->name('createresponsibility');
         Route::get('/edit_responsibility/{responsibility}', 'edit')->name('editresponsibility');
         Route::get('responsibility/{id}', 'show')->name('showresponsibility');
-
     });
     Route::controller(ProjectController::class)->group(function () {
         Route::get('/active_projects', 'index')->name('projects');
@@ -39,5 +39,8 @@ Route::middleware([
         Route::get('new_project_for_responsibility/{id}', 'createFromResponsibility')->name('createprojectfromresponsibility');
         Route::get('/edit_project/{Project}', 'edit')->name('editProject');
         Route::get('/show_project/{id}', 'show')->name('showProject');
+    });
+    Route::controller(ActionController::class)->group(function () {
+        Route::get('/today_actions', 'todaysActions')->name("todaysActions");
     });
 });

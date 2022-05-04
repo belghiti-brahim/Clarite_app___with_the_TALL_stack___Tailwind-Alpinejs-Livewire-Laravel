@@ -1,7 +1,7 @@
 <div>
     <div class="flex flex-col items-center justify-center gap-6">
         @forelse ($responsibilities as $responsibility)
-            <div id="res{{ $responsibility->id }}" style="outline-style: solid;
+            <div style="outline-style: solid;
                             outline-color: {{ $responsibility->color }};"
                 class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full min-h-[6rem] flex flex-row items-center justify-between">
                 <a href="{{ route('showresponsibility', $responsibility->id) }}">

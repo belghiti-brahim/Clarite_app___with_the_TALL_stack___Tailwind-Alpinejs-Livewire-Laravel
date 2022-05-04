@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Action;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ActionController extends Controller
 {
@@ -12,9 +14,11 @@ class ActionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function todaysActions()
     {
-        //
+   
+
+        return view("pages.actions.todays_actions");
     }
 
     /**

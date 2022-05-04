@@ -21,7 +21,7 @@
 
     @forelse ($projects as $project)
         @if ($project->archive === 1)
-            <div id="project{{ $project->id }}" style="outline-style: solid;
+            <div style="outline-style: solid;
                                 outline-color: {{ $project->responsibility->color }};"
                 class="px-8 py-4 bg-white shadow-xl sm:rounded-lg  min-h-[8rem] flex flex-col items-start justify-around">
                 <div class="flex flex-col gap-y-3">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         @else
-            <div id="project{{ $project->id }}" style="outline-style: solid;
+            <div style="outline-style: solid;
                                 outline-color: {{ $project->responsibility->color }};"
                 class="px-10 bg-white shadow-xl sm:rounded-lg  min-h-[8rem] flex flex-col items-start justify-around">
                 <div class="opacity-25 flex flex-col gap-y-3">
