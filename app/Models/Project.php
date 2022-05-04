@@ -23,4 +23,8 @@ class Project extends Model
     {
         return $this->hasMany(Project::class, 'project_id')->with('children');
     }
+    public function actions()
+    {
+        return $this->hasMany(Action::class, 'project_id', 'id');
+    }
 }

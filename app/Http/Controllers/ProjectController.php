@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Action;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\Responsibility;
@@ -19,6 +20,7 @@ class ProjectController extends Controller
         $archive = "arcived projects";
         return view("pages.projects.archived_projects", compact("archive"));
     }
+
     public function createFromResponsibility($id)
     {
         $responsibility = Responsibility::find($id);
@@ -30,5 +32,12 @@ class ProjectController extends Controller
         $project = Project::find($id);
         $responsibility = Responsibility::find($project->responsibility->id);
         return view("pages.projects.edit_project", compact('project', 'responsibility'));
+    }
+
+    public function show($id)
+    {
+        $project = Project::find($id);
+        $actions = Action::where("project_id", "=", $project->id)->get();
+        return view("pages.projects.show_project", compact("project", "actions"));
     }
 }

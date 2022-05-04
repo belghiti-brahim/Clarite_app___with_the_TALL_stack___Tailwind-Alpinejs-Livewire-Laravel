@@ -38,6 +38,6 @@ Route::middleware([
         Route::get('/archived_projcets', 'archivedProjects')->name('achivedProjects');
         Route::get('new_project_for_responsibility/{id}', 'createFromResponsibility')->name('createprojectfromresponsibility');
         Route::get('/edit_project/{Project}', 'edit')->name('editProject');
-
+        Route::get('/show_project/{id}', 'show')->name('showProject');
     });
 });

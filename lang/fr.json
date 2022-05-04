@@ -51,5 +51,10 @@
     "Open this select menu": "Ouvrez ce menu de sélection",
     "None": "aucun",
     "you don't have any projects created." : "tu n'a aucun projet creé.",
-    "Find a project" : "Chercher un projet"
+    "Find a project" : "Chercher un projet",
+    "Add a new action" : "Ajouter une action",
+    "You have no action" : "tu n'as aucune action",
+    "To do": "À faire",
+    "Doing" : "En cours",
+    "Done" : "Fait"
 }

@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-8">
     <div>
         <label for="resonsibilityId" class="block text-sm font-medium text-gray-700">
-            {{__("Find a project")}} </label>
+            {{ __('Find a project') }} </label>
         <div class="mt-1 flex rounded-md shadow-sm">
 
             <input type="text" name="findproject" id="resonsibilityId" wire:model="search"
@@ -25,14 +25,14 @@
                                 outline-color: {{ $project->responsibility->color }};"
                 class="px-8 py-4 bg-white shadow-xl sm:rounded-lg  min-h-[8rem] flex flex-col items-start justify-around">
                 <div class="flex flex-col gap-y-3">
-                    <a class="h-full w-full" href="">
+                    <a class="h-full w-full" href="{{ route('showProject', $project) }}">
                         <p class="w-full hover:font-black modelTitle">{{ $project->project_name }} </p>
                     </a>
                     <div class="flex flex-row">
                         <a href="{{ route('editProject', $project) }}">
-                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                            <x-icon imgPath="{{ asset('images/edit.png') }}" />
                         </a>
-                        <button wire:click="archiveProject({{$project->id}})">
+                        <button wire:click="archiveProject({{ $project->id }})">
                             <x-icon imgPath="{{ asset('images/inbox.png') }}" />
                         </button>
                         <button wire:click="remove({{ $project->id }})">
@@ -42,16 +42,15 @@
                     @forelse($project->children as $subproject)
                         <div
                             class="px-4 py-1 bg-gray-200 shadow-xl sm:rounded-lg w-auto h-full flex flex-row items-start justify-around gap-4">
-                            <a href="">
+                            <a href="{{ route('showProject', $subproject) }}">
                                 <p class="hover:font-black">{{ $subproject->project_name }} </p>
                             </a>
                             <div class="flex flex-row">
                                 <a href="{{ route('editProject', $subproject) }}">
-                                     <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                    <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                 </a>
-
                                 <button wire:click="remove({{ $subproject->id }})" class="icon">
-                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                    <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                 </button>
                             </div>
                         </div>
@@ -64,15 +63,15 @@
                                 outline-color: {{ $project->responsibility->color }};"
                 class="px-10 bg-white shadow-xl sm:rounded-lg  min-h-[8rem] flex flex-col items-start justify-around">
                 <div class="opacity-25 flex flex-col gap-y-3">
-                    <a class="h-full w-full" href="">
+                    <a class="h-full w-full" href="{{ route('showProject', $project) }}">
                         <p class="w-full hover:font-bold">{{ $project->project_name }} </p>
                     </a>
                     <div class="flex flex-row">
                         <a href="{{ route('editProject', $project) }}">
-                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                            <x-icon imgPath="{{ asset('images/edit.png') }}" />
                         </a>
-                        <button wire:click="archiveProject({{$project->id}})">  
-                          <x-icon imgPath="{{ asset('images/inbox.png') }}" />
+                        <button wire:click="archiveProject({{ $project->id }})">
+                            <x-icon imgPath="{{ asset('images/inbox.png') }}" />
                         </button>
                         <button wire:click="remove({{ $project->id }})">
                             <x-icon imgPath="{{ asset('images/delete.png') }}" />
@@ -82,7 +81,7 @@
                     @forelse($project->children as $subproject)
                         <div
                             class="bg-gray-200 shadow-xl sm:rounded-lg w-68 h-full min flex flex-row items-start justify-around">
-                            <a href="">
+                            <a href="{{ route('showProject', $subproject) }}">
                                 <p class="hover:text-1xl font-meduim">{{ $subproject->project_name }} </p>
                             </a>
                             <div class="flex flex-row">
