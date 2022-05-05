@@ -54,14 +54,14 @@ class CreateResponsibilityForm extends Component
 
         if ($this->responsibility) {
             Responsibility::find($this->responsibility->id)->update($newOrUpdatedResponsibility);
+            return redirect()->route('dashboard')->with('message', 'Your responsibility has been successfully updated');
+
         } else {
             Responsibility::create(
                 $newOrUpdatedResponsibility
             );
+            return redirect()->route('dashboard')->with('message', 'Your new responsibility has been successfully created');
         }
-
-
-        return redirect()->route('dashboard')->with('message', 'Ta nouvelle responsabilité a été crée avec succès');
     }
 
 

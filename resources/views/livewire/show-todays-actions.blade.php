@@ -25,7 +25,7 @@
                                 <button wire:click="startAction({{ $action->id }})" class="icon">
                                     <x-icon imgPath="{{ asset('images/start.png') }}" />
                                 </button>
-                                <a href="">
+                                <a href="{{ route('editAction', $action->id) }}">
                                     <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                 </a>
                                 <button wire:click="remove({{ $action->id }})" class="icon">
@@ -66,7 +66,7 @@
                                 <button wire:click="actionIsDone({{ $action->id }})" class="icon">
                                     <x-icon imgPath="{{ asset('images/done.png') }}" />
                                 </button>
-                                <a href="">
+                                <a href="{{ route('editAction', $action->id) }}">
                                     <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                 </a>
                                 <button wire:click="remove({{ $action->id }})" class="icon">
@@ -105,7 +105,7 @@
                                 </a>
                             </div>
                             <div class="flex flex-row">
-                                <a href="">
+                                <a href="{{ route('editAction', $action->id) }}">
                                     <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                 </a>
                                 <button wire:click="remove({{ $action->id }})" class="icon">

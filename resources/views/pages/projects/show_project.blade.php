@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-jet-nav-link href="" :active="request()->routeIs('')">
+        <x-jet-nav-link href="{{ route('createActionFromProject', $project->id) }}" :active="request()->routeIs('')">
             {{ __('Add a new action') }}
         </x-jet-nav-link>
     </x-slot>
@@ -23,6 +23,4 @@
         </div>
         </div>
     </main>
-
-
 </x-app-layout>

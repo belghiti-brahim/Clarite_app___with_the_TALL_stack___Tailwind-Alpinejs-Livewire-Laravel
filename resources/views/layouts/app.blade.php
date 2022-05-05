@@ -13,6 +13,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 
     @livewireStyles
 
@@ -37,16 +39,25 @@
 
         <!-- Page Content -->
         <main>
+            @if (session('message'))
+                <div class="flex items-center bg-lime-500 text-white text-sm font-bold px-4 py-3" x-data="{ show: true }"
+                    x-show="show" x-init="setTimeout(() => show = false, 3000)">
+                    <p>{{ session('message') }}</p>
+                </div>
+            @endif
             {{ $slot }}
         </main>
     </div>
-  
+
 
 
     @stack('modals')
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
     <script src="https://unpkg.com/vanilla-picker@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    Usage
 </body>
 
 </html>

@@ -51,14 +51,17 @@ class CreateProjectForm extends Component
             "project_id" => $parentProject
         ];
 
+        $id = $this->responsibility->id;
         if ($this->project) {
-$selectedProject =Project::find($this->project->id);    
-  $selectedProject->update($newOrUpdatedProject);
+            $selectedProject = Project::find($this->project->id);
+            $selectedProject->update($newOrUpdatedProject);
+            redirect()->route('showresponsibility', $id)->with('message', 'Your project has been successfully updated');
+
         } else {
             Project::create($newOrUpdatedProject);
+            redirect()->route('showresponsibility', $id)->with('message', 'Your new project has been successfully created');
+
         }
-        $id = $this->responsibility->id;
-        redirect()->route('showresponsibility', $id)->with('message', 'Ta nouvelle responsabilité a été crée avec succès');
     }
 
     public function render()

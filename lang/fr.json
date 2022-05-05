@@ -29,6 +29,7 @@
     "Reach your goals": "Atteignez vos objectifs",
     "Whoops! Something went wrong.": "Woops! Quelque chose a mal tourné.",
     "save": "Enregistrer",
+    "cancel": "Annuler",
     "Dashboard": "Mon espace du travail",
     "Define a new responsibility": "Définir une résponsabilité",
     "Responsibilities": "Responsabilités",
@@ -63,5 +64,13 @@
     "Thursday" : "Jeudi",
     "Friday" : "Vendredi",
     "Saturday" : "Samedi",
-    "Sunday": "Dimanche"
+    "Sunday": "Dimanche",
+    "Actions" : "Les actions",
+    "One and done":"actions effectuées une seule fois",
+    "Do" : "Faire",
+    "Action description" : "Déscription de l'action",
+    "Definition of done" : "Détails supplémentaire",
+    "Project" : "Le Projet",
+    "Action's deadline" : "Date d'échéance de l'action",
+    "clear": "effacer"
 }

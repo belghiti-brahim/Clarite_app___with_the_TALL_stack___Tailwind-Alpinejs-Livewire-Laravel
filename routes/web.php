@@ -43,6 +43,7 @@ Route::middleware([
     Route::controller(ActionController::class)->group(function () {
         Route::get('/todays_actions', 'todaysActions')->name('todaysActions');
         Route::get('/this_week_actions', 'thisWeekActions')->name('thisWeekActions');
-        Route::get('/edit_action/{id}', 'edit')->name('editaction');
+        Route::get('/edit_action/{id}', 'edit')->name('editAction');
+        Route::get('new_action_for_project/{id}', 'createFromProject')->name('createActionFromProject');
     });
 });

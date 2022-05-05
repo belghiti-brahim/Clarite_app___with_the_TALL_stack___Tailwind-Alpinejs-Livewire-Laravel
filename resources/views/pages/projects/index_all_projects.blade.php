@@ -10,8 +10,7 @@
 
     <div class="ml-auto py-5">
         <div id="projectCollection" class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                {{-- @livewire("show-projects") --}}
-                     <livewire:show-projects  :archive='null'></livewire:show-projects>
+                     <livewire:show-projects  :archive='null'>
             </div>
         </div>
     </div>

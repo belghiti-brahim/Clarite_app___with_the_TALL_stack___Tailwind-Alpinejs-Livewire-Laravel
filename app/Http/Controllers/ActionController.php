@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Action;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,9 +35,10 @@ class ActionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createFromProject($id)
     {
-        //
+        $project = Project::find($id);
+        return view("pages.actions.create_action", compact("project"));
     }
 
     /**

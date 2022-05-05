@@ -74,7 +74,7 @@
                  </div>
              </div>
              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                 <button type="submit" class="btn">Save</button>
+                 <button type="submit" class="btn">{{__('save')}}</button>
                  @if ($project)
                      <a href="{{ route('dashboard') }}" class="btnDelete ml-4">
                          {{ __('cancel') }}
