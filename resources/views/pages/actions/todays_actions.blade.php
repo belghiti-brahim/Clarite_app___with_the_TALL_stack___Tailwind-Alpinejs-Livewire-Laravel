@@ -2,9 +2,9 @@
     <x-slot name="header">
         <x-jet-nav-link href="{{ route('todaysActions') }}" :active="request()->routeIs('todaysActions')">
             {{ __("Today's actions") }}
-            <x-jet-nav-link href="{{ route('thisWeekActions') }}" :active="request()->routeIs('thisWeekActions')">
-                {{ __('This week actions') }}
-            </x-jet-nav-link>
+        </x-jet-nav-link>
+        <x-jet-nav-link href="{{ route('thisWeekActions') }}" :active="request()->routeIs('thisWeekActions')">
+            {{ __('This week actions') }}
         </x-jet-nav-link>
     </x-slot>
 

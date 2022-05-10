@@ -35,15 +35,17 @@
                     <x-jet-authentication-card-logo />
                     <p class="font-Fira text-orange-400 font-extrabold text-3xl">Clarté</p>
                 </div>
-                @if (Route::has('login'))
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="btn">Your personal workspace</a>
-                    @else
-                        <div>
-                            <a href="{{ route('login') }}" class="btn">{{ __('Login') }}</a>
-                        </div>
-                    @endauth
-                @endif
+                <div class="flex gap-3">
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ route('dashboard') }}" class="btn">Your personal workspace</a>
+                        @else
+                            <div>
+                                <a href="{{ route('login') }}" class="btn">{{ __('Login') }}</a>
+                            </div>
+                        @endauth
+                    @endif
+                </div>
             </div>
         </nav>
     </header>
@@ -80,10 +82,11 @@
                 <h1 class="font-Fira text-4xl text-center font-black text-gray-700 px-8 leading-[3rem]">
                     {{ __('A person with') }} <span class="text-orange-400">{{ __('responsabilities') }}
                     </span>{{ __(', Being one of these
-                                                            responsibilities, he initiates') }}
+                                                                                                                                                                                                                                                                    responsibilities, he initiates') }}
                     <span class="text-orange-400">{{ __('projects,') }}</span>
                     {{ __('Which he completes by carrying out') }} <span
-                        class="text-orange-400">{{ __('actions.') }} </span> </h1>
+                        class="text-orange-400">{{ __('actions.') }} </span>
+                </h1>
             </div>
         </section>
 

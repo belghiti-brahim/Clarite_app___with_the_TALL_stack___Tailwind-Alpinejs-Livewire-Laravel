@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                <livewire:create-action-form :project="$project">
+                <livewire:create-action-form :project="$project" :action="null">
                 </div>
             </div>
         </div>

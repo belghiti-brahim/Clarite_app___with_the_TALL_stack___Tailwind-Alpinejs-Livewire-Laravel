@@ -13,7 +13,7 @@
              @endif
              <div class="grid grid-cols-3 gap-6">
                  <div class="col-span-3 sm:col-span-2">
-                     <label for="actionId" class="block text-sm font-medium text-gray-700">Action description
+                     <label for="actionId" class="block text-sm font-medium text-gray-700">{{__('Action description')}}
                      </label>
                      <div class="mt-1 flex rounded-md shadow-sm">
                          <span
@@ -37,9 +37,13 @@
 
              <div class="col-span-6 sm:col-span-3">
                  <label for="project" class="block text-sm font-medium text-gray-700">{{ __('Project') }}</label>
-                 <select id="project" name="project" autocomplete="color-name" 
+                 <select id="project" name="project" wire:model="projectName"
                      class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                     <option value={{ $project->id }}>{{ $project->project_name }}</option>
+                     @if ($action)
+                         <option value={{ $projectName->id }}>{{ $projectName->project_name }}</option>
+                     @else
+                         <option value={{ $project->id }}>{{ $project->project_name }}</option>
+                     @endif
                  </select>
              </div>
 
@@ -57,7 +61,8 @@
                  <label for="datetime"
                      class="flex-grow  block font-medium text-sm text-gray-700 mb-1">{{ __("Action's deadline") }}</label>
                  <div class="flex align-middle align-content-center">
-                     <input x-ref="datetime" type="text" id="datetime" data-input name="deadline" wire:model="deadline" placeholder="Select.."
+                     <input x-ref="datetime" type="text" id="datetime" data-input name="deadline" wire:model="deadline"
+                         placeholder="Select.."
                          class="block w-full px-2 border-gray-300 focus:border-sky-300 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-l-md shadow-sm">
                      <a class="h-11 w-20 input-button cursor-pointer rounded-r-md bg-transparent border-gray-300 border-t border-b border-r flex justify-center items-center"
                          title="clear" data-clear>

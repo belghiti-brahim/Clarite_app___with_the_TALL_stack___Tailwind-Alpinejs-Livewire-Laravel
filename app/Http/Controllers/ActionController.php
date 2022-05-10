@@ -17,17 +17,17 @@ class ActionController extends Controller
      */
     public function todaysActions()
     {
-           return view("pages.actions.todays_actions");
+        return view("pages.actions.todays_actions");
     }
 
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function thisWeekActions()
     {
-           return view("pages.actions.this_week_actions");
+        return view("pages.actions.this_week_actions");
     }
 
     /**
@@ -71,7 +71,14 @@ class ActionController extends Controller
      */
     public function edit($id)
     {
-        return view("pages.actions.edit_action");
+        $action = Action::find($id);
+        // $actionProjectId = $action->project_id;
+        // dd($actionProjectId);
+        $project = Project::all();
+        // dd($project);
+        // $project = Project::where('id', '=', $actionProjectId)->paginate();
+
+        return view("pages.actions.edit_action", compact("action"));
     }
 
     /**

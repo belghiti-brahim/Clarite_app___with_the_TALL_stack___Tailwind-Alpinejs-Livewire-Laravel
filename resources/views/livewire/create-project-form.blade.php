@@ -42,7 +42,7 @@
                      </select>
 
                  </div>
-                    <div class="col-span-6 sm:col-span-3">
+                 <div class="col-span-6 sm:col-span-3">
                      <label for="project"
                          class="block text-sm font-medium text-gray-700">{{ __('This project belongs to this project') }}</label>
                      <select id="project" name="project" autocomplete="project-name" wire:model="parentProjectName"
@@ -50,12 +50,11 @@
                          {{-- <option selected>{{ __('Open this select menu') }}</option> --}}
                          <option value=null>{{ __('None') }}</option>
                          @forelse ($responsibility->projects as $projects)
-                       
-                             @if($project && $projects->id === $project->id)
+                             @if ($project && $projects->id === $project->id)
                                  <option class="hidden" value={{ $projects->id }}>
                                      {{ $projects->project_name }}</option>
                              @elseif($projects->project_id != null)
-                                <option class="hidden" value={{ $projects->id }}>
+                                 <option class="hidden" value={{ $projects->id }}>
                                      {{ $projects->project_name }}</option>
                              @else
                                  @if ($projects->archive === 0)
@@ -74,7 +73,7 @@
                  </div>
              </div>
              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                 <button type="submit" class="btn">{{__('save')}}</button>
+                 <button type="submit" class="btn">{{ __('save') }}</button>
                  @if ($project)
                      <a href="{{ route('dashboard') }}" class="btnDelete ml-4">
                          {{ __('cancel') }}

@@ -72,5 +72,13 @@
     "Definition of done" : "Détails supplémentaire",
     "Project" : "Le Projet",
     "Action's deadline" : "Date d'échéance de l'action",
-    "clear": "effacer"
+    "clear": "effacer",
+    "Hold on...":"Attendez...",
+    "Select a responsbility":"Sélectionner une responsabilité",
+    "Select a project" : "Sélectionner un projet",
+    "Today's actions" : "les actions d'aujourd'hui",
+    "This week actions" : "les actions de la semaine",
+    "Archived" : "Archivés",
+    "Active" : "Actifs"
+
 }

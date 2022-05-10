@@ -8,10 +8,13 @@ use Livewire\Component;
 
 class ShowResponbilities extends Component
 {
-    public function remove($ResponsibilityId)
+
+    public $confirmingResponsibilityDeletion = false;
+    public function removeResponsibility($id)
     {
-        $Responsibility = Responsibility::find($ResponsibilityId);
-        $Responsibility->delete();
+        $this->confirmingResponsibilityDeletion = $id;
+        // $Responsibility = Responsibility::find($ResponsibilityId);
+        // $Responsibility->delete();
     }
 
     public function render()

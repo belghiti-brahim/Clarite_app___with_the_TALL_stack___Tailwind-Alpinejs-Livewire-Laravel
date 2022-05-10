@@ -1,5 +1,13 @@
 <div>
-    <h1 class="hierarchyl1">{{ $today }}</h1>
+    <div class="flex flex-col gap-3">
+        <h1 class="hierarchyl1">{{ $today }}</h1>
+        <div x-data="{ open: @entangle('showDropdown').defer }" class="mb-5">
+
+            <button class="btn mb-5" x-on:click="open = !open">Add a last minute action for today / done</button>
+            @livewire('create-last-minute-action')
+
+        </div>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="col-start-1 flex flex-col gap-y-4">
             <h3 class="text-xl">{{ __('To do') }}</h3>

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class ShowTodaysActions extends Component
 {
+   public $listeners = ['new-action' => '$refresh'];
+
     public function remove($actionId)
     {
         $action = Action::find($actionId);
@@ -35,6 +37,7 @@ class ShowTodaysActions extends Component
         $authid = Auth::user()->id;
         $actions = Action::select('actions.*')
             ->where('deadline', '=', $today)
+            ->latest()
             ->join('projects', 'projects.id', '=', 'actions.project_id')
             ->join('responsibilities', 'responsibilities.id', '=', 'projects.responsibility_id')
             ->join('users', 'users.id', '=', 'responsibilities.user_id')

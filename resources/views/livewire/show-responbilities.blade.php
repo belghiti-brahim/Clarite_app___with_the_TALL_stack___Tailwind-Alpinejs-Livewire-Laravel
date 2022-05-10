@@ -9,11 +9,10 @@
                         {{ $responsibility->name }}</p>
                 </a>
                 <div class="flex flex-row">
-                    <a href="{{ route('editresponsibility', $responsibility) }}"
-                        >
-                        <x-icon imgPath="{{ asset('images/edit.png') }}"  />
+                    <a href="{{ route('editresponsibility', $responsibility) }}">
+                        <x-icon imgPath="{{ asset('images/edit.png') }}" />
                     </a>
-                    <button wire:click="remove({{ $responsibility->id }})" >
+                    <button wire:click="removeResponsibility({{ $responsibility->id }})">
                         <x-icon imgPath="{{ asset('images/delete.png') }}" />
                     </button>
                 </div>
@@ -25,7 +24,23 @@
             </div>
         @endforelse
     </div>
+    <x-jet-dialog-modal wire:model="confirmingResponsibilityDeletion">
+        <x-slot name="title">
+            {{ __('Delete Account') }}
+        </x-slot>
 
-    <script>
-    </script>
+        <x-slot name="content">
+            {{ __('Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+        </x-slot>
+
+        <x-slot name="footer">
+            <x-jet-secondary-button wire:click="$set('confirmingUserDeletion', false)" wire:loading.attr="disabled">
+                {{ __('Cancel') }}
+            </x-jet-secondary-button>
+
+            <x-jet-danger-button class="ml-3 btnDelete" wire:click="deleteResponsibility({{$confirmingResponsibilityDeletion}})" wire:loading.attr="disabled">
+                {{ __('Delete Account') }}
+            </x-jet-danger-button>
+        </x-slot>
+    </x-jet-dialog-modal>
 </div>
