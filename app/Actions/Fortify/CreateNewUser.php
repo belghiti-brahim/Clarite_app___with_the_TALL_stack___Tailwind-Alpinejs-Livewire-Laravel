@@ -13,7 +13,6 @@ use Mockery\Undefined;
 class CreateNewUser implements CreatesNewUsers
 {
     use PasswordValidationRules;
-
     /**
      * Validate and create a newly registered user.
      *
@@ -27,18 +26,19 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
+            'appLanguage' => ['required', 'string', 'in:fr,en'],
         ])->validate();
 
         $language = App::getLocale();
-        if (!$language){
-            $language = 'fr';
+        if (!$language) {
+            $language = 'en';
         }
 
-        return User::create([
+        return app::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-            'language' => $language,
+            'language' => $input['appLanguage'],
         ]);
     }
 }

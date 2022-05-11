@@ -13,7 +13,7 @@ return [
     |
     */
 
-    
+
     'accepted'             => 'Le champ :attribute doit être accepté.',
     'accepted_if'          => 'Le champ :attribute doit être accepté quand :other a la valeur :value.',
     'active_url'           => 'Le champ :attribute n\'est pas une URL valide.',
@@ -63,7 +63,7 @@ return [
         'string'  => 'Le texte :attribute doit contenir au moins :value caractères.',
     ],
     'image'                => 'Le champ :attribute doit être une image.',
-    'in'                   => 'Le champ :attribute est invalide.',
+    // 'in'                   => 'Le champ :attribute est invalide.',
     'in_array'             => 'Le champ :attribute n\'existe pas dans :other.',
     'integer'              => 'Le champ :attribute doit être un entier.',
     'ip'                   => 'Le champ :attribute doit être une adresse IP valide.',
@@ -130,6 +130,8 @@ return [
     'uploaded'             => 'Le fichier du champ :attribute n\'a pu être téléversé.',
     'url'                  => 'Le format de l\'URL de :attribute n\'est pas valide.',
     'uuid'                 => 'Le champ :attribute doit être un UUID valide',
+    'in'                   => 'Le champ :attribute doit être soit fr ou en.',
+
 
     /*
     |--------------------------------------------------------------------------

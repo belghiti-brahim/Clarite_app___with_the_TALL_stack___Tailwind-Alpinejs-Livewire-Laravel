@@ -1,5 +1,5 @@
 {
-    "Join us now" : "Rejoignez-nous",
+    "Join us now": "Rejoignez-nous",
     "Free up your mental space.": "Libérez votre espace mental.",
     "Organize yourself efficiently,": "Organisez-vous efficacement,",
     "without stress.": "sans stress.",
@@ -19,7 +19,7 @@
     "Reach your goals": "Atteignez vos objectifs",
     "save": "Enregistrer",
     "cancel": "Annuler",
-    "Your personal workspace" : "Mon espace du travail",
+    "Your personal workspace": "Mon espace du travail",
     "Dashboard": "Mon espace du travail",
     "Define a new responsibility": "Définir une résponsabilité",
     "Responsibilities": "Responsabilités",
@@ -61,7 +61,7 @@
     "Action description": "Déscription de l'action",
     "Definition of done": "Détails supplémentaire",
     "Project": "Le Projet",
-    "Projects" : "Projets",
+    "Projects": "Projets",
     "Action's deadline": "Date d'échéance de l'action",
     "clear": "effacer",
     "Hold on...": "Attendez...",
@@ -556,7 +556,9 @@
     "Your email address is unverified.": "Your email address is unverified.",
     "Your registered VAT Number is :vatNumber.": "Votre numéro de TVA enregistré est :vatNumber.",
     "Zip / Postal Code": "Code postal",
-    "List of Languages" : "Liste des langues",
+    "List of Languages": "Liste des langues",
     "English": "Anglais",
-    "French" :"Français"
+    "French": "Français",
+    "fr or en": "fr ou en",
+    "Type either fr for French or en for English  to have as language for the app": "Tapez fr pour Français ou en pour Anglais pour decider la langue du siteweb"
 }
