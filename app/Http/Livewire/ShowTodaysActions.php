@@ -45,4 +45,5 @@ class ShowTodaysActions extends Component
             ->get();
         return view('livewire.show-todays-actions', compact("actions", "today"));
     }
+   
 }

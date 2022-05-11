@@ -3,8 +3,11 @@
         <h1 class="hierarchyl1">{{ $today }}</h1>
         <div x-data="{ open: @entangle('showDropdown').defer }" class="mb-5">
 
-            <button class="btn mb-5" x-on:click="open = !open">Add a last minute action for today / done</button>
+            <button class="btn mb-5"
+                x-on:click="open = !open">{{ __('Add a last minute action for today') }}</button>
             @livewire('create-last-minute-action')
+            <button x-show="shoDropdonw=open ? open : false"
+                class="bg-lime-400 hover:bg-lime-500 text-white font-bold text-base py-2 px-4 rounded mt-5">{{ __('Close') }}</button>
 
         </div>
     </div>

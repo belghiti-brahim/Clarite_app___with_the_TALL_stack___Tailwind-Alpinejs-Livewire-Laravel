@@ -59,10 +59,11 @@ class CreateLastMinuteAction extends Component
         $newCreatedAction = Action::create($newAction);
         $newCreatedAction->contexts()->attach($actionStatus);
         $this->emitUp('new-action');
-        // $this->actionDescription = "";
-        // $this->selectedResponsibility = "";
-        // $this->slectedProject = "";
         $this->showDropdown = false;
+    
+        $this->actionDescription = "";
+        $this->selectedResponsibility = "";
+        $this->slectedProject = "";
 
     }
 }
