@@ -38,7 +38,7 @@
                 <div class="flex gap-3">
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ route('dashboard') }}" class="btn">Your personal workspace</a>
+                            <a href="{{ route('dashboard') }}" class="btn">{{__('Your personal workspace')}}</a>
                         @else
                             <div>
                                 <a href="{{ route('login') }}" class="btn">{{ __('Login') }}</a>
