@@ -24,8 +24,14 @@ class SetLocale
         if ($user) {
             $locale = $user->language;
         } else {
-            $locale = $request->query('lang', Session::get('lang', 'en'));
-            Session::put('lang', $locale);
+            $accepted_language = $request->header('accept-language');
+            $languageArray = explode(',', $accepted_language);
+            $locale = $languageArray[0] ?? 'en';
+
+            if (request('language')) {
+                $locale = $request->query('language', Session::get('language', 'en'));
+            }
+            Session::put('language', $locale);
         }
 
         App::setLocale($locale);
