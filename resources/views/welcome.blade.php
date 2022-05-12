@@ -38,7 +38,8 @@
                 <div class="flex gap-3">
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ route('dashboard') }}" class="btn">{{__('Your personal workspace')}}</a>
+                            <a href="{{ route('dashboard') }}"
+                                class="btn">{{ __('Your personal workspace') }}</a>
                         @else
                             <div>
                                 <a href="{{ route('login') }}" class="btn">{{ __('Login') }}</a>
@@ -75,18 +76,19 @@
             </div>
         </section>
 
-        <section class="max-w-8xl bg-white">
-            <div class="flex flex-col items-center justify-evenly gap-8">
+        <section class="bg-white">
+            <div class="flex flex-col items-center justify-center gap-8">
                 <h1 class="text-base sm:text-2xl text-sky-700">
                     {{ __('A new approach to the TODO-list, simple, easy, useful:') }}</h1>
-                <h1 class="font-Fira text-4xl text-center font-black text-gray-700 px-8 leading-[3rem]">
-                    {{ __('A person with') }} <span class="text-orange-400">{{ __('responsabilities') }}
-                    </span>{{ __(', Being one of these
-                                                                                                                                                                                                                                                                    responsibilities, he initiates') }}
-                    <span class="text-orange-400">{{ __('projects,') }}</span>
-                    {{ __('Which he completes by carrying out') }} <span
-                        class="text-orange-400">{{ __('actions.') }} </span>
-                </h1>
+                <div class="max-w-6xl flex flex-col items-center justify-center gap-8">
+                    <h1 class="font-Fira text-4xl text-center font-black text-gray-700 px-8 leading-[3rem]">
+                        {{ __('A person with') }} <span class="text-orange-400">{{ __('responsabilities') }}
+                        </span>{{ __(', Being one of these responsibilities, he initiates') }}
+                        <span class="text-orange-400">{{ __('projects,') }}</span>
+                        {{ __('Which he completes by carrying out') }} <span
+                            class="text-orange-400">{{ __('actions.') }} </span>
+                    </h1>
+                </div>
             </div>
         </section>
 

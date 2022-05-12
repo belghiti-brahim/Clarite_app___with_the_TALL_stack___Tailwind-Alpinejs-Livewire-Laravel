@@ -560,5 +560,6 @@
     "English": "Anglais",
     "French": "Français",
     "fr or en": "fr ou en",
-    "Type either fr for French or en for English to have as language for the app": "Tapez fr pour Français ou en pour Anglais pour decider la langue du siteweb"
+    "Type either fr for French or en for English to have as language for the app": "Tapez fr pour Français ou en pour Anglais pour decider la langue du siteweb",
+    "name" : "nom"
 }

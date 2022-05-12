@@ -24,4 +24,10 @@ class ShowResponbilities extends Component
         $responsibilities = Responsibility::with("users")->where("user_id", "=", $userId)->get();
         return view('livewire.show-responbilities', compact("responsibilities"));
     }
+    public function deleteResponsibility($confirmingResponsibilityDeletion)
+    {
+        $responsibility = Responsibility::find($confirmingResponsibilityDeletion);
+        $responsibility->delete();
+        $this->confirmingResponsibilityDeletion = false;
+    }
 }

@@ -34,11 +34,13 @@ class CreateNewUser implements CreatesNewUsers
             $language = 'en';
         }
 
-        return app::create([
+        return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'language' => $input['appLanguage'],
         ]);
+        // dd("2");
+
     }
 }

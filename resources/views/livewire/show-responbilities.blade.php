@@ -34,11 +34,11 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-jet-secondary-button wire:click="$set('confirmingUserDeletion', false)" wire:loading.attr="disabled">
+            <x-jet-secondary-button wire:click="$set('confirmingResponsibilityDeletion', false)">
                 {{ __('Cancel') }}
             </x-jet-secondary-button>
 
-            <x-jet-danger-button class="ml-3 btnDelete" wire:click="deleteResponsibility({{$confirmingResponsibilityDeletion}})" wire:loading.attr="disabled">
+            <x-jet-danger-button class="ml-3 btnDelete" wire:click="deleteResponsibility({{$confirmingResponsibilityDeletion}})">
                 {{ __('Delete Account') }}
             </x-jet-danger-button>
         </x-slot>

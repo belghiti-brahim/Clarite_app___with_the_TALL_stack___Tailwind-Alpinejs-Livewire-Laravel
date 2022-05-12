@@ -12,7 +12,7 @@ class Context extends Model
 
     public function actions()
     {
-        return $this->belongsToMany(Action::class, "action_context", "action_id", "action_id");
+        return $this->hasMany(Action::class, "context_id", "id");
     }
 
 }

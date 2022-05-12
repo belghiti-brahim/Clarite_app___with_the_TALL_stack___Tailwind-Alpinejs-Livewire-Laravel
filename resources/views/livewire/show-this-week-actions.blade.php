@@ -5,34 +5,32 @@
                   <div class="flex flex-col gap-y-4">
                       <h3 class="text-base font-semibold">{{ __('To do') }}</h3>
                       @forelse ($mondayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 1)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 1)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                      <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -43,34 +41,32 @@
                   <div class="flex flex-col gap-y-4">
                       <h3 class="text-base font-semibold">{{ __('Done') }}</h3>
                       @forelse ($mondayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 3)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 3)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="" class="line-through">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                      <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="" class="line-through">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -86,34 +82,32 @@
                   <div class="flex flex-col gap-y-4">
                       <h3 class="text-base font-semibold">{{ __('To do') }}</h3>
                       @forelse ($tueasdayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 1)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 1)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                      <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full items-center justify-between">
@@ -125,34 +119,32 @@
                       <h3 class="text-base font-semibold">{{ __('Done') }}</h3>
 
                       @forelse ($tueasdayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 3)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 3)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="" class="line-through">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                      <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="" class="line-through">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -168,34 +160,32 @@
                   <div class="flex flex-col gap-y-4">
                       <h3 class="text-base font-semibold">{{ __('To do') }}</h3>
                       @forelse ($wednesdayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 1)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 1)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                      <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -206,34 +196,32 @@
                   <div class="flex flex-col gap-y-4">
                       <h3 class="text-base font-semibold">{{ __('Done') }}</h3>
                       @forelse ($wednesdayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 3)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 3)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="" class="line-through">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                      <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="" class="line-through">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -249,34 +237,32 @@
                   <div class="flex flex-col gap-y-4">
                       <h3 class="text-base font-semibold">{{ __('To do') }}</h3>
                       @forelse ($thursdayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 1)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 1)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                      <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -288,34 +274,32 @@
                       <h3 class="text-base font-semibold">{{ __('Done') }}</h3>
 
                       @forelse ($thursdayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 3)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 3)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="" class="line-through">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                        <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="" class="line-through">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -331,34 +315,32 @@
                   <div class="flex flex-col gap-y-4">
                       <h3 class="text-base font-semibold">{{ __('To do') }}</h3>
                       @forelse ($fridayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 1)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 1)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                   <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -369,34 +351,32 @@
                   <div class="flex flex-col gap-y-4">
                       <h3 class="text-base font-semibold">{{ __('Done') }}</h3>
                       @forelse ($fridayactions as $action)
-                          @foreach ($action->contexts as $contextaction)
-                              @if ($contextaction->pivot->context_id == 3)
-                                  <div id="action{{ $action->id }}"
-                                      style="outline-style: solid;
+                          @if ($action->context_id == 3)
+                              <div id="action{{ $action->id }}"
+                                  style="outline-style: solid;
                                         outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                      <div class="flex flex-col">
-                                          <a href="" class="line-through">
-                                              <p>{{ $action->description }}</p>
-                                          </a>
-                                          <a href="{{ route('showProject', $action->project) }}">
-                                              <p style="color:{{ $action->project->responsibility->color }};"
-                                                  class="py-1 w-full text-sm rounded outline-none">
-                                                  #{{ $action->project->project_name }}
-                                                  <p>
-                                          </a>
-                                      </div>
-                                  <div class="flex flex-row">
-                                          <a href="{{ route('editAction', $action->id) }}">
-                                              <x-icon imgPath="{{ asset('images/edit.png') }}" />
-                                          </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
-                                              <x-icon imgPath="{{ asset('images/delete.png') }}" />
-                                          </button>
-                                      </div>
+                                  class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                  <div class="flex flex-col">
+                                      <a href="" class="line-through">
+                                          <p>{{ $action->description }}</p>
+                                      </a>
+                                      <a href="{{ route('showProject', $action->project) }}">
+                                          <p style="color:{{ $action->project->responsibility->color }};"
+                                              class="py-1 w-full text-sm rounded outline-none">
+                                              #{{ $action->project->project_name }}
+                                              <p>
+                                      </a>
                                   </div>
-                              @endif
-                          @endforeach
+                                  <div class="flex flex-row">
+                                      <a href="{{ route('editAction', $action->id) }}">
+                                          <x-icon imgPath="{{ asset('images/edit.png') }}" />
+                                      </a>
+                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <x-icon imgPath="{{ asset('images/delete.png') }}" />
+                                      </button>
+                                  </div>
+                              </div>
+                          @endif
                       @empty
                           <div
                               class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -413,24 +393,23 @@
                       <div class="flex flex-col gap-y-4">
                           <h3 class="text-base font-semibold">{{ __('To do') }}</h3>
                           @forelse ($saturdayactions as $action)
-                              @foreach ($action->contexts as $contextaction)
-                                  @if ($contextaction->pivot->context_id == 1)
-                                      <div id="action{{ $action->id }}"
-                                          style="outline-style: solid;
+                              @if ($action->context_id == 1)
+                                  <div id="action{{ $action->id }}"
+                                      style="outline-style: solid;
                                             outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                          class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                          <div class="flex flex-col">
-                                              <a href="">
-                                                  <p>{{ $action->description }}</p>
-                                              </a>
-                                              <a href="{{ route('showProject', $action->project) }}">
-                                                  <p style="color:{{ $action->project->responsibility->color }};"
-                                                      class="py-1 w-full text-sm rounded outline-none">
-                                                      #{{ $action->project->project_name }}
-                                                      <p>
-                                              </a>
-                                          </div>
-                                           <div class="flex flex-row">
+                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                      <div class="flex flex-col">
+                                          <a href="">
+                                              <p>{{ $action->description }}</p>
+                                          </a>
+                                          <a href="{{ route('showProject', $action->project) }}">
+                                              <p style="color:{{ $action->project->responsibility->color }};"
+                                                  class="py-1 w-full text-sm rounded outline-none">
+                                                  #{{ $action->project->project_name }}
+                                                  <p>
+                                          </a>
+                                      </div>
+                                      <div class="flex flex-row">
                                           <a href="{{ route('editAction', $action->id) }}">
                                               <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                           </a>
@@ -438,9 +417,8 @@
                                               <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                           </button>
                                       </div>
-                                      </div>
-                                  @endif
-                              @endforeach
+                                  </div>
+                              @endif
                           @empty
                               <div
                                   class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -451,24 +429,23 @@
                       <div class="flex flex-col gap-y-4">
                           <h3 class="text-base font-semibold">{{ __('Done') }}</h3>
                           @forelse ($saturdayactions as $action)
-                              @foreach ($action->contexts as $contextaction)
-                                  @if ($contextaction->pivot->context_id == 3)
-                                      <div id="action{{ $action->id }}"
-                                          style="outline-style: solid;
+                              @if ($action->context_id == 3)
+                                  <div id="action{{ $action->id }}"
+                                      style="outline-style: solid;
                                             outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                          class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                          <div class="flex flex-col">
-                                              <a href="" class="line-through">
-                                                  <p>{{ $action->description }}</p>
-                                              </a>
-                                              <a href="{{ route('showProject', $action->project) }}">
-                                                  <p style="color:{{ $action->project->responsibility->color }};"
-                                                      class="py-1 w-full text-sm rounded outline-none">
-                                                      #{{ $action->project->project_name }}
-                                                      <p>
-                                              </a>
-                                          </div>
-                                           <div class="flex flex-row">
+                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                      <div class="flex flex-col">
+                                          <a href="" class="line-through">
+                                              <p>{{ $action->description }}</p>
+                                          </a>
+                                          <a href="{{ route('showProject', $action->project) }}">
+                                              <p style="color:{{ $action->project->responsibility->color }};"
+                                                  class="py-1 w-full text-sm rounded outline-none">
+                                                  #{{ $action->project->project_name }}
+                                                  <p>
+                                          </a>
+                                      </div>
+                                      <div class="flex flex-row">
                                           <a href="{{ route('editAction', $action->id) }}">
                                               <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                           </a>
@@ -476,9 +453,8 @@
                                               <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                           </button>
                                       </div>
-                                      </div>
-                                  @endif
-                              @endforeach
+                                  </div>
+                              @endif
                           @empty
                               <div
                                   class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -494,24 +470,23 @@
                       <div class="flex flex-col gap-y-4">
                           <h3 class="text-base font-semibold">{{ __('To do') }}</h3>
                           @forelse ($sundayactions as $action)
-                              @foreach ($action->contexts as $contextaction)
-                                  @if ($contextaction->pivot->context_id == 1)
-                                      <div id="action{{ $action->id }}"
-                                          style="outline-style: solid;
+                              @if ($action->context_id == 1)
+                                  <div id="action{{ $action->id }}"
+                                      style="outline-style: solid;
                                             outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                          class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                          <div class="flex flex-col">
-                                              <a href="">
-                                                  <p>{{ $action->description }}</p>
-                                              </a>
-                                              <a href="{{ route('showProject', $action->project) }}">
-                                                  <p style="color:{{ $action->project->responsibility->color }};"
-                                                      class="py-1 w-full text-sm rounded outline-none">
-                                                      #{{ $action->project->project_name }}
-                                                      <p>
-                                              </a>
-                                          </div>
-                                       <div class="flex flex-row">
+                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                      <div class="flex flex-col">
+                                          <a href="">
+                                              <p>{{ $action->description }}</p>
+                                          </a>
+                                          <a href="{{ route('showProject', $action->project) }}">
+                                              <p style="color:{{ $action->project->responsibility->color }};"
+                                                  class="py-1 w-full text-sm rounded outline-none">
+                                                  #{{ $action->project->project_name }}
+                                                  <p>
+                                          </a>
+                                      </div>
+                                      <div class="flex flex-row">
                                           <a href="{{ route('editAction', $action->id) }}">
                                               <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                           </a>
@@ -519,9 +494,8 @@
                                               <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                           </button>
                                       </div>
-                                      </div>
-                                  @endif
-                              @endforeach
+                                  </div>
+                              @endif
                           @empty
                               <div
                                   class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">
@@ -532,24 +506,23 @@
                       <div class="flex flex-col gap-y-4">
                           <h3 class="text-base font-semibold">{{ __('Done') }}</h3>
                           @forelse ($sundayactions as $action)
-                              @foreach ($action->contexts as $contextaction)
-                                  @if ($contextaction->pivot->context_id == 3)
-                                      <div id="action{{ $action->id }}"
-                                          style="outline-style: solid;
+                              @if ($action->context_id == 3)
+                                  <div id="action{{ $action->id }}"
+                                      style="outline-style: solid;
                                             outline-color: {{ $action->project->responsibility->color }};  outline-width: medium;"
-                                          class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
-                                          <div class="flex flex-col">
-                                              <a href="" class="line-through">
-                                                  <p>{{ $action->description }}</p>
-                                              </a>
-                                              <a href="{{ route('showProject', $action->project) }}">
-                                                  <p style="color:{{ $action->project->responsibility->color }};"
-                                                      class="py-1 w-full text-sm rounded outline-none">
-                                                      #{{ $action->project->project_name }}
-                                                      <p>
-                                              </a>
-                                          </div>
-                                            <div class="flex flex-row">
+                                      class="px-6 py-1 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between gap-2">
+                                      <div class="flex flex-col">
+                                          <a href="" class="line-through">
+                                              <p>{{ $action->description }}</p>
+                                          </a>
+                                          <a href="{{ route('showProject', $action->project) }}">
+                                              <p style="color:{{ $action->project->responsibility->color }};"
+                                                  class="py-1 w-full text-sm rounded outline-none">
+                                                  #{{ $action->project->project_name }}
+                                                  <p>
+                                          </a>
+                                      </div>
+                                      <div class="flex flex-row">
                                           <a href="{{ route('editAction', $action->id) }}">
                                               <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                           </a>
@@ -557,9 +530,8 @@
                                               <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                           </button>
                                       </div>
-                                      </div>
-                                  @endif
-                              @endforeach
+                                  </div>
+                              @endif
                           @empty
                               <div
                                   class="px-10 bg-white overflow-hidden shadow-xl sm:rounded-lg min-w-full flex flex-col items-center justify-between">

@@ -42,3 +42,7 @@
 .pageContentTitle{
     @apply font-secondary text-5xl text-left text-orange-400 font-black;
 }
+
+.errorMessage{
+    @apply  mt-3 list-disc list-inside text-sm text-red-600;
+}

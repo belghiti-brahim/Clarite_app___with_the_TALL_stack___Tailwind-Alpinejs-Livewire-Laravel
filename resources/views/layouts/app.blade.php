@@ -50,8 +50,9 @@
 
     @stack('modals')
     @livewireScripts
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="https://unpkg.com/vanilla-picker@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
+
 </html>

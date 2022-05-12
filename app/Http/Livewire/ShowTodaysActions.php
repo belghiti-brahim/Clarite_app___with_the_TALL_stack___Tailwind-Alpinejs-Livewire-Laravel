@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ShowTodaysActions extends Component
 {
-   public $listeners = ['new-action' => '$refresh'];
+    public $listeners = ['new-action' => '$refresh'];
 
     public function remove($actionId)
     {
@@ -21,14 +21,16 @@ class ShowTodaysActions extends Component
     {
         $action = Action::find($actionId);
         $status = 2;
-        $action->contexts()->sync($status);
+        $action->context_id = $status;
+        $action->save();
     }
 
     public function actionIsDone($actionId)
     {
         $action = Action::find($actionId);
         $status = 3;
-        $action->contexts()->sync($status);
+        $action->context_id = $status;
+        $action->save();
     }
 
     public function render()
@@ -45,5 +47,4 @@ class ShowTodaysActions extends Component
             ->get();
         return view('livewire.show-todays-actions', compact("actions", "today"));
     }
-   
 }

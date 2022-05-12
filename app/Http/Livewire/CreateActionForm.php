@@ -25,19 +25,16 @@ class CreateActionForm extends Component
 
 
         if ($action) {
-            foreach ($action->contexts as $context) {
-                $actionStatus = $context->id;
-            }
-            // dd($action->project);
-
             $this->action = $action;
+
             $this->actionDescription = $this->action->description;
             $this->definitonOfDone = $this->action->definition_of_done;
             $this->projectName = $action->project;
-            $this->status = $actionStatus;
+            $this->status = $this->action->context_id;
             $this->deadline = $this->action->deadline;
         }
     }
+
 
     public function submit()
     {
@@ -58,6 +55,7 @@ class CreateActionForm extends Component
             'description' => $this->actionDescription,
             'definition_of_done' => $this->definitonOfDone,
             'project_id' => $this->project->id,
+            'context_id' => $actionStatus,
             'deadline' => $this->deadline,
         ];
 
@@ -68,17 +66,16 @@ class CreateActionForm extends Component
                 'description' => $this->actionDescription,
                 'definition_of_done' => $this->definitonOfDone,
                 'project_id' => $this->action->project_id,
+                'context_id' => $actionStatus,
                 'deadline' => $this->deadline,
             ];
             $editedAction = Action::find($this->action->id);
             $editedAction->update($updatedAction);
             $editedAction->save();
-            $editedAction->contexts()->sync($actionStatus);
             $projectid = $editedAction->project_id;
             redirect()->route('showProject', $projectid)->with('message', 'Your action has been successfully updated');
         } else {
             $newCreatedAction = Action::create($newAction);
-            $newCreatedAction->contexts()->attach($actionStatus);
             $projectid = $this->project->id;
             redirect()->route('showProject', $projectid)->with('message', 'Your new action has been successfully created');
         }

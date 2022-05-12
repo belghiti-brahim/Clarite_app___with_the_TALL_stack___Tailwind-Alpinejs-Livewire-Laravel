@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("definition_of_done");
             $table->string("deadline");
             $table->foreignId("project_id")->constrained("projects")->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId("context_id")->constrained("contexts")->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

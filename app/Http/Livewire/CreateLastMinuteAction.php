@@ -16,7 +16,6 @@ class CreateLastMinuteAction extends Component
     public $projects;
     public $selectedResponsibility = null;
     public $slectedProject = null;
-    public $showDropdown = false;
 
     public function mount()
     {
@@ -49,21 +48,18 @@ class CreateLastMinuteAction extends Component
         ]);
 
         $today = Carbon::today()->toDateString();
-        $actionStatus = 1;
         $newAction = [
             'description' => $this->actionDescription,
             'definition_of_done' => "to be edited for more details",
             'project_id' => $this->slectedProject,
+            'context_id' => 1,
             'deadline' => $today,
         ];
         $newCreatedAction = Action::create($newAction);
-        $newCreatedAction->contexts()->attach($actionStatus);
         $this->emitUp('new-action');
-        $this->showDropdown = false;
-    
+
         $this->actionDescription = "";
         $this->selectedResponsibility = "";
         $this->slectedProject = "";
-
     }
 }
