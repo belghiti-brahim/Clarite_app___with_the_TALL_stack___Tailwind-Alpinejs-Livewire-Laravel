@@ -25,7 +25,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -61,7 +61,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -102,7 +102,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -139,7 +139,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -180,7 +180,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -216,7 +216,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -257,7 +257,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -294,7 +294,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -335,7 +335,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -371,7 +371,7 @@
                                       <a href="{{ route('editAction', $action->id) }}">
                                           <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                       </a>
-                                      <button wire:click="remove({{ $action->id }})" class="icon">
+                                      <button wire:click="removeAction({{ $action->id }})" class="icon">
                                           <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                       </button>
                                   </div>
@@ -413,7 +413,8 @@
                                           <a href="{{ route('editAction', $action->id) }}">
                                               <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                           </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <button wire:click="removeAction({{ $action->id }})"
+                                              class="icon">
                                               <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                           </button>
                                       </div>
@@ -449,7 +450,8 @@
                                           <a href="{{ route('editAction', $action->id) }}">
                                               <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                           </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <button wire:click="removeAction({{ $action->id }})"
+                                              class="icon">
                                               <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                           </button>
                                       </div>
@@ -490,7 +492,8 @@
                                           <a href="{{ route('editAction', $action->id) }}">
                                               <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                           </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <button wire:click="removeAction({{ $action->id }})"
+                                              class="icon">
                                               <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                           </button>
                                       </div>
@@ -526,7 +529,8 @@
                                           <a href="{{ route('editAction', $action->id) }}">
                                               <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                           </a>
-                                          <button wire:click="remove({{ $action->id }})" class="icon">
+                                          <button wire:click="removeAction({{ $action->id }})"
+                                              class="icon">
                                               <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                           </button>
                                       </div>
@@ -542,4 +546,24 @@
                   </div>
               </div>
           </div>
+          <x-jet-dialog-modal wire:model="confirmingActionDeletion">
+              <x-slot name="title">
+                  {{ __('Delete Account') }}
+              </x-slot>
+
+              <x-slot name="content">
+                  {{ __('Are you sure you want to this action? Once your action is deleted, it will be permanently deleted.') }}
+              </x-slot>
+
+              <x-slot name="footer">
+                  <x-jet-secondary-button wire:click="$set('confirmingActionDeletion', false)">
+                      {{ __('Cancel') }}
+                  </x-jet-secondary-button>
+
+                  <x-jet-danger-button class="ml-3 btnDelete"
+                      wire:click="deleteAction({{ $confirmingActionDeletion }})">
+                      {{ __('Delete') }}
+                  </x-jet-danger-button>
+              </x-slot>
+          </x-jet-dialog-modal>
       </div>

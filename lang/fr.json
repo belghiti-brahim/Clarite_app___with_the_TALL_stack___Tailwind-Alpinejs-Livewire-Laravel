@@ -9,7 +9,7 @@
     "A new approach to the TODO-list, simple, easy, useful:": "Une nouvelle approche à la TODO-list, simple, facile, utile:",
     "A person with": "Une personne à des",
     "responsabilities": "responsabilités",
-    "Being one of these responsibilities, he initiates": "étant l'une de ces responsabilités, elle initie des",
+    ", Being one of these responsibilities, he initiates": ", étant l'une de ces responsabilités, elle initie des",
     "projects": "projets",
     "Which he completes by carrying out": "qu'elle complète en réalisant des",
     "actions.": "actions",
@@ -561,5 +561,11 @@
     "French": "Français",
     "fr or en": "fr ou en",
     "Type either fr for French or en for English to have as language for the app": "Tapez fr pour Français ou en pour Anglais pour decider la langue du siteweb",
-    "name" : "nom"
+    "name" : "nom",
+    "To finish this project" : "Pour terminer ce projet",
+    "I perform these actions:" : "J'effectue ces actions",
+    "Are you sure you want to this responsibility? Once your responsibility is deleted, all of its projects and actions will be permanently deleted." : "Êtes-vous sûr de vouloir supprimer cette responsabilité? Une fois votre responsabilité supprimée, tous ses projets et actions seront définitivement supprimés.",
+    "Are you sure you want to this Project? Once your Project is deleted, all of its actions will be permanently deleted." : "Êtes-vous sûr de vouloir supprimer ce projet? Une fois votre projet supprimé, tous les actions seront définitivement supprimés.",
+    "Are you sure you want to this action? Once your action is deleted, it will be permanently deleted." :"Êtes-vous sûr de vouloir supprimer cette action? la supression est definitive.",
+    "Add a last minute action for today": "Add a last minute action for today"
 }

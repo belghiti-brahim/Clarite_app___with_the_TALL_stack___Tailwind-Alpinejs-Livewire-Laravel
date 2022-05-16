@@ -21,7 +21,6 @@ class CreateLastMinuteAction extends Component
     {
         $user = Auth::user();
         $userId = $user->id;
-        // $responsibilities = Responsibility::with("users")->where("user_id", "=", $userId)->get();
         $this->responsibilities = Responsibility::with("users")->where("user_id", "=", $userId)->get();
         $this->projects = collect();
     }
@@ -61,5 +60,6 @@ class CreateLastMinuteAction extends Component
         $this->actionDescription = "";
         $this->selectedResponsibility = "";
         $this->slectedProject = "";
+    
     }
 }

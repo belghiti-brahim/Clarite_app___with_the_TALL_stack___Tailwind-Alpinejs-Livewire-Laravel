@@ -16,7 +16,7 @@
                 <div class=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         @endif
     @else
-        <div class=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     @endif
 
     @forelse ($projects as $project)
@@ -35,7 +35,7 @@
                         <button wire:click="archiveProject({{ $project->id }})">
                             <x-icon imgPath="{{ asset('images/inbox.png') }}" />
                         </button>
-                        <button wire:click="remove({{ $project->id }})">
+                        <button wire:click="removeProject({{ $project->id }})">
                             <x-icon imgPath="{{ asset('images/delete.png') }}" />
                         </button>
                     </div>
@@ -49,7 +49,7 @@
                                 <a href="{{ route('editProject', $subproject) }}">
                                     <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                 </a>
-                                <button wire:click="remove({{ $subproject->id }})" class="icon">
+                                <button wire:click="removeProject({{ $subproject->id }})" class="icon">
                                     <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                 </button>
                             </div>
@@ -73,7 +73,7 @@
                         <button wire:click="archiveProject({{ $project->id }})">
                             <x-icon imgPath="{{ asset('images/inbox.png') }}" />
                         </button>
-                        <button wire:click="remove({{ $project->id }})">
+                        <button wire:click="removeProject({{ $project->id }})">
                             <x-icon imgPath="{{ asset('images/delete.png') }}" />
                         </button>
 
@@ -89,7 +89,7 @@
                                     class="w-6 h-6 hover:w-8 hover:h-8">
                                     <x-icon imgPath="{{ asset('images/edit.png') }}" />
                                 </a>
-                                <button wire:click="remove({{ $subproject->id }})">
+                                <button wire:click="removeProject({{ $subproject->id }})">
                                     <x-icon imgPath="{{ asset('images/delete.png') }}" />
                                 </button>
                             </div>
@@ -109,4 +109,23 @@
 <div class="flex">
     {{ $projects->links() }}
 </div>
+    <x-jet-dialog-modal wire:model="confirmingProjectDeletion">
+        <x-slot name="title">
+            {{ __('Delete Account') }}
+        </x-slot>
+
+        <x-slot name="content">
+            {{ __('Are you sure you want to this Project? Once your Project is deleted, all of its actions will be permanently deleted.') }}
+        </x-slot>
+
+        <x-slot name="footer">
+            <x-jet-secondary-button wire:click="$set('confirmingProjectDeletion', false)">
+                {{ __('Cancel') }}
+            </x-jet-secondary-button>
+
+            <x-jet-danger-button class="ml-3 btnDelete" wire:click="deleteProject({{$confirmingProjectDeletion}})">
+                {{ __('Delete') }}
+            </x-jet-danger-button>
+        </x-slot>
+    </x-jet-dialog-modal>
 </div>

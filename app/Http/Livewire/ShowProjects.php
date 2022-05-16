@@ -13,6 +13,8 @@ class ShowProjects extends Component
     public $archive;
     public $active;
     public string $search = "";
+    public $confirmingProjectDeletion = false;
+
 
     public function mount(Responsibility $responsibility, $archive)
     {
@@ -20,23 +22,27 @@ class ShowProjects extends Component
         $this->archive = $archive;
     }
 
-    public function archiveProject($projectId){
+    public function archiveProject($projectId)
+    {
         $project = Project::find($projectId);
         if ($project->archive === 1) {
             $project->archive = 0;
             $project->save();
-       
         } else {
             $project->archive = 1;
             $project->save();
         }
-
+    }
+    public function removeProject($id)
+    {
+        $this->confirmingProjectDeletion = $id;
     }
 
-    public function remove($projectId)
+    public function deleteProject($confirmingProjectDeletion)
     {
-        $project = Project::find($projectId);
+        $project = Project::find($confirmingProjectDeletion);
         $project->delete();
+        $this->confirmingProjectDeletion = false;
     }
 
 
@@ -45,22 +51,21 @@ class ShowProjects extends Component
         if ($this->archive) {
             if ($this->archive === "to test for and show responsibility projects") {
                 $responsibilityId =  $this->responsibility->id;
-                $projects = Project::with("responsibility")->
-                where('responsibility_id', '=', $responsibilityId)
-                ->with("children")->whereNull('project_id')
-                ->orderBy('archive', 'desc')->orderBy('created_at', 'desc')
-                ->where("project_name", "LIKE", "%{$this->search}%")
-                ->paginate(8);
+                $projects = Project::with("responsibility")->where('responsibility_id', '=', $responsibilityId)
+                    ->with("children")->whereNull('project_id')
+                    ->orderBy('archive', 'desc')->orderBy('created_at', 'desc')
+                    ->where("project_name", "LIKE", "%{$this->search}%")
+                    ->paginate(8);
             } else {
                 $authid = Auth::user()->id;
                 $projects = Project::select('projects.*')
-                ->where("project_name", "LIKE", "%{$this->search}%")
-                ->where("archive", "=", "0")->with("children")->whereNull('project_id')->orderBy('created_at', 'desc')
-                ->join('responsibilities', 'responsibilities.id', '=', 'projects.responsibility_id')
-                ->join('users', 'users.id', '=', 'responsibilities.user_id')
-                ->where('user_id', $authid)
-                ->paginate(12);
-        }
+                    ->where("project_name", "LIKE", "%{$this->search}%")
+                    ->where("archive", "=", "0")->with("children")->whereNull('project_id')->orderBy('created_at', 'desc')
+                    ->join('responsibilities', 'responsibilities.id', '=', 'projects.responsibility_id')
+                    ->join('users', 'users.id', '=', 'responsibilities.user_id')
+                    ->where('user_id', $authid)
+                    ->paginate(12);
+            }
         } else {
             $authid = Auth::user()->id;
             $projects = Project::select('projects.*')

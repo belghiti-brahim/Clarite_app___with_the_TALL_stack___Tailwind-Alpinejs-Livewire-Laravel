@@ -77,97 +77,67 @@
         </section>
 
         <section class="bg-white">
-            <div class="flex flex-col items-center justify-center gap-8">
-                <h1 class="text-base sm:text-2xl text-sky-700">
-                    {{ __('A new approach to the TODO-list, simple, easy, useful:') }}</h1>
-                <div class="max-w-6xl flex flex-col items-center justify-center gap-8">
-                    <h1 class="font-Fira text-4xl text-center font-black text-gray-700 px-8 leading-[3rem]">
-                        {{ __('A person with') }} <span class="text-orange-400">{{ __('responsabilities') }}
-                        </span>{{ __(', Being one of these responsibilities, he initiates') }}
-                        <span class="text-orange-400">{{ __('projects,') }}</span>
-                        {{ __('Which he completes by carrying out') }} <span
-                            class="text-orange-400">{{ __('actions.') }} </span>
-                    </h1>
+            <div class="flex flex-col items-center justify-center gap-24">
+                <div class="flex flex-col items-center justify-center gap-8">
+                    <h1 class="text-base sm:text-2xl text-sky-700">
+                        {{ __('A new approach to the TODO-list, simple, easy, useful:') }}</h1>
+                    <div class="max-w-6xl flex flex-col items-center justify-center gap-8">
+                        <h1 class="font-Fira text-4xl text-center font-black text-gray-700 px-8 leading-[3rem]">
+                            {{ __('A person with') }} <span class="text-orange-400">{{ __('responsabilities') }}
+                            </span>{{ __(', Being one of these responsibilities, he initiates') }}
+                            <span class="text-orange-400">{{ __('projects,') }}</span>
+                            {{ __('Which he completes by carrying out') }} <span
+                                class="text-orange-400">{{ __('actions.') }} </span>
+                        </h1>
+                    </div>
+                </div>
+                <div>
+                    @if (Config::get('app.locale') == 'en')
+                        <img class="" src="{{ asset('images/framwork_expaliner_en.png') }}"
+                            alt="lists icon">
+                    @elseif (Config::get('app.locale') == 'fr')
+                        <img class="" src="{{ asset('images/framwork_expaliner_fr.png') }}"
+                            alt="lists icon">
+                    @endif
                 </div>
             </div>
+
         </section>
 
         <section class="max-w-8xl mx-auto container bg-white">
-            <div>
-                <div tabindex="0" aria-label="group of cards"
-                    class="focus:outline-none mt-20 flex flex-wrap justify-center gap-10 px-4">
-                    <div tabindex="0" aria-label="card 1" class="focus:outline-none flex sm:w-full md:w-5/12 pb-20">
-                        <div class="w-20 h-20 relative mr-5">
-                            <div class="absolute top-0 right-0 bg-sky-100 rounded w-16 h-16 mt-2 mr-1"></div>
-                            <div
-                                class="absolute text-white bottom-0 left-0 bg-sky-600 rounded w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                                <img class="w-[2.5rem]" src="{{ asset('images/list-01.png') }}" alt="lists icon">
-                            </div>
-                        </div>
-                        <div class="w-10/12">
-                            <h2 tabindex="0" class="focus:outline-none text-lg font-bold leading-tight text-gray-800">
-                                {{ __('Create a task list') }}</h2>
-                            <p tabindex="0" class="focus:outline-none text-base text-gray-600 leading-normal pt-2">Créez
-                                facilement de nouvelles tâches et listes de contrôle. Une vue élégante de la liste des
-                                tâches vous aidera à vous concentrer sur les éléments les plus importants et à agir
-                                immédiatement.
-                            </p>
-                        </div>
-                    </div>
-                    <div tabindex="0" aria-label="card 2" class="focus:outline-none flex sm:w-full md:w-5/12 pb-20">
-                        <div class="w-20 h-20 relative mr-5">
-                            <div class="absolute top-0 right-0 bg-sky-100 rounded w-16 h-16 mt-2 mr-1"></div>
-                            <div
-                                class="absolute text-white bottom-0 left-0 bg-sky-600 rounded w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                                <img class="w-[3.5rem]" src="{{ asset('images/hierarchy-01.png') }}"
-                                    alt="hierarchy">
-                            </div>
-                        </div>
-                        <div class="w-10/12">
-                            <h2 tabindex="0" class="focus:outline-none text-lg font-bold leading-tight text-gray-800">
-                                {{ __('Turn a hierarchy in a list of tasks') }}</h2>
-                            <p tabindex="0" class="focus:outline-none text-base text-gray-600 leading-normal pt-2">
-                                Une fois que vous avez ajouté des dates d'échéance, des contextes et des dépendances,
-                                MLO générera automatiquement une liste intelligente d'éléments d'action qui nécessitent
-                                votre attention immédiate.</p>
-                        </div>
-                    </div>
-                    <div tabindex="0" aria-label="card 3" class="focus:outline-none flex sm:w-full md:w-5/12 pb-20">
-                        <div class="w-20 h-20 relative mr-5">
-                            <div class="absolute top-0 right-0 bg-sky-100 rounded w-16 h-16 mt-2 mr-1"></div>
-                            <div
-                                class="absolute text-white bottom-0 left-0 bg-sky-600 rounded w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG3.svg"
-                                    alt="html tag">
-                            </div>
-                        </div>
-                        <div class="w-10/12">
-                            <h2 tabindex="0" class="focus:outline-none text-lg font-bold leading-tight text-gray-800">
-                                {{ __('Do more') }}
-                            </h2>
-                            <p tabindex="0" class="focus:outline-none text-base text-gray-600 leading-normal pt-2">
-                                La qualité de la sortie augmentera avec Todo Cloud. Affichez le travail par date de
-                                début/échéance, propriétaire ou utilisez des listes, des balises et des filtres de liste
-                                intelligente pour terminer le travail.</p>
-                        </div>
-                    </div>
-                    <div tabindex="0" aria-label="card 4" class="focus:outline-none flex sm:w-full md:w-5/12 pb-20">
-                        <div class="w-20 h-20 relative mr-5">
-                            <div class="absolute top-0 right-0 bg-sky-100 rounded w-16 h-16 mt-2 mr-1"></div>
-                            <div
-                                class="absolute text-white bottom-0 left-0 bg-sky-600 rounded w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG4.svg"
-                                    alt="monitor">
-                            </div>
-                        </div>
-                        <div class="w-10/12">
-                            <h2 tabindex="0" class="focus:outline-none text-lg font-bold leading-tight text-gray-800">
-                                {{ __('Reach your goals') }} </h2>
-                            <p tabindex="0" class="focus:outline-none text-base text-gray-600 leading-normal pt-2">
-                                Avec un système pour tout suivre, vous pouvez vous détendre lorsque la journée est
-                                terminée avec moins de stress en sachant que Todo Cloud suit tout votre travail.</p>
-                        </div>
-                    </div>
+            <div aria-label="group of cards" class="grid overflow-hidden grid-cols-2 grid-rows-2 gap-20 p-24">
+                <div aria-label="card 1" class="flex flex-col gap-3">
+                    <h2 class="text-lg font-bold leading-tight text-gray-800">
+                        {{ __('Create a task list') }}</h2>
+                    <p class="text-base text-gray-600 leading-normal pt-2">Créez
+                        facilement de nouvelles tâches et listes de contrôle. Une vue élégante de la liste des
+                        tâches vous aidera à vous concentrer sur les éléments les plus importants et à agir
+                        immédiatement.
+                    </p>
+                </div>
+                <div aria-label="card 2" class="flex flex-col gap-3">
+                    <h2 class="text-lg font-bold leading-tight text-gray-800">
+                        {{ __('Turn a hierarchy in a list of tasks') }}</h2>
+                    <p class="text-base text-gray-600 leading-normal pt-2">
+                        Une fois que vous avez ajouté des dates d'échéance, des contextes et des dépendances,
+                        MLO générera automatiquement une liste intelligente d'éléments d'action qui nécessitent
+                        votre attention immédiate.</p>
+                </div>
+                <div aria-label="card 3" class="flex flex-col gap-3">
+                    <h2 class="text-lg font-bold leading-tight text-gray-800">
+                        {{ __('Do more') }}
+                    </h2>
+                    <p class="text-base text-gray-600 leading-normal pt-2">
+                        La qualité de la sortie augmentera avec Todo Cloud. Affichez le travail par date de
+                        début/échéance, propriétaire ou utilisez des listes, des balises et des filtres de liste
+                        intelligente pour terminer le travail.</p>
+                </div>
+                <div aria-label="card 4" class="flex flex-col">
+                    <h2 class="text-lg font-bold leading-tight text-gray-800">
+                        {{ __('Reach your goals') }} </h2>
+                    <p class="text-base text-gray-600 leading-normal pt-2">
+                        Avec un système pour tout suivre, vous pouvez vous détendre lorsque la journée est
+                        terminée avec moins de stress en sachant que Todo Cloud suit tout votre travail.</p>
                 </div>
             </div>
         </section>

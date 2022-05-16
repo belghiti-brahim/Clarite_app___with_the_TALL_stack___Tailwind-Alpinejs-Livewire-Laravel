@@ -27,7 +27,7 @@
                 </div>
                 <div class="mt-4">
                     <x-jet-label for="color" value="{{ __('Choose a color for this responsibility') }}" />
-                    <div wire:model="color" x-data="{ color: '#37ace6ff' }" x-init="picker = new Picker($refs.button);
+                    <div wire:model="color" x-data="{ color: '#00ccffff' }" x-init="picker = new Picker($refs.button);
                     picker.onDone = rawColor => {
                         color = rawColor.hex;
                         $dispatch('input', color)
@@ -66,6 +66,7 @@
                         @enderror
                     </div>
                 </div>
+               
 
                 <div class="flex items-center justify-end mt-4">
                     <x-jet-button class="btn ml-4">

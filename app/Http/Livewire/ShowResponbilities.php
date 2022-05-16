@@ -13,8 +13,6 @@ class ShowResponbilities extends Component
     public function removeResponsibility($id)
     {
         $this->confirmingResponsibilityDeletion = $id;
-        // $Responsibility = Responsibility::find($ResponsibilityId);
-        // $Responsibility->delete();
     }
 
     public function render()

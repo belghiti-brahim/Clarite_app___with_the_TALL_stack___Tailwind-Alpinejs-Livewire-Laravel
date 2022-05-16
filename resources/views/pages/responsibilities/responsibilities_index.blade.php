@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-jet-nav-link href="{{ route('createresponsibility') }}" :active="request()->routeIs('createresponsability')">
-            {{ __('Define a new responsibility') }}
+        <x-jet-nav-link href="{{ route('createresponsibility') }}">
+            <button type="button" class="addBtn">{{ __('Define a new responsibility') }}}</button>
         </x-jet-nav-link>
     </x-slot>
 
@@ -18,7 +18,7 @@
         <div class="md:w-3/5 ml-auto py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 @livewire('show-responbilities')
-                
+
             </div>
         </div>
     </main>

@@ -2,15 +2,15 @@
     <div>
         <div class="flex flex-col gap-3">
             <h1 class="hierarchyl1">{{ $today }}</h1>
-            <div x-data="{ open: false }">
-                <button class="btn mb-5"
+            <div x-data="{ open: @entangle('dropy') }">
+                <button class="addBtn mb-5"
                     x-on:click="open = ! open">{{ __('Add a last minute action for today') }}</button>
 
                 <div x-show="open">
                     @livewire('create-last-minute-action')
                 </div>
-                <button
-                    class="bg-lime-400 hover:bg-lime-500 text-white font-bold text-base py-2 px-4 rounded mt-5">{{ __('Close') }}</button>
+                <button x-show="{{$dropy === false ? "open" : "open"}}" 
+                    class="addBtn mt-3 mb-3">{{ __('Close') }}</button>
             </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
                             <a href="{{ route('editAction', $action->id) }}">
                                 <x-icon imgPath="{{ asset('images/edit.png') }}" />
                             </a>
-                            <button wire:click="remove({{ $action->id }})" class="icon">
+                            <button wire:click="removeAction({{ $action->id }})" class="icon">
                                 <x-icon imgPath="{{ asset('images/delete.png') }}" />
                             </button>
                         </div>
@@ -80,7 +80,7 @@
                             <a href="{{ route('editAction', $action->id) }}">
                                 <x-icon imgPath="{{ asset('images/edit.png') }}" />
                             </a>
-                            <button wire:click="remove({{ $action->id }})" class="icon">
+                            <button wire:click="removeAction({{ $action->id }})" class="icon">
                                 <x-icon imgPath="{{ asset('images/delete.png') }}" />
                             </button>
                         </div>
@@ -117,7 +117,7 @@
                             <a href="{{ route('editAction', $action->id) }}">
                                 <x-icon imgPath="{{ asset('images/edit.png') }}" />
                             </a>
-                            <button wire:click="remove({{ $action->id }})" class="icon">
+                            <button wire:click="removeAction({{ $action->id }})" class="icon">
                                 <x-icon imgPath="{{ asset('images/delete.png') }}" />
                             </button>
                         </div>
@@ -131,4 +131,23 @@
             @endforelse
         </div>
     </div>
+        <x-jet-dialog-modal wire:model="confirmingActionDeletion">
+        <x-slot name="title">
+            {{ __('Delete Account') }}
+        </x-slot>
+
+        <x-slot name="content">
+            {{ __('Are you sure you want to this action? Once your action is deleted, it will be permanently deleted.') }}
+        </x-slot>
+
+        <x-slot name="footer">
+            <x-jet-secondary-button wire:click="$set('confirmingActionDeletion', false)">
+                {{ __('Cancel') }}
+            </x-jet-secondary-button>
+
+            <x-jet-danger-button class="ml-3 btnDelete" wire:click="deleteAction({{$confirmingActionDeletion}})">
+                {{ __('Delete') }}
+            </x-jet-danger-button>
+        </x-slot>
+    </x-jet-dialog-modal>
 </div>

@@ -33,10 +33,10 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password"
                     name="password_confirmation" required autocomplete="new-password" />
             </div>
-            <div class="mt-4">
+            {{-- <div class="mt-4">
                 <x-jet-label for="appLanguage" value="{{ __('Type either fr for French or en for English to have as language for the app') }}" />
                 <x-jet-input id="appLanguage" class="block mt-1 w-full" name="appLanguage" type="text" placeholder="{{__('fr or en')}}"/>
-            </div>
+            </div> --}}
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">

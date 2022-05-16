@@ -9,12 +9,18 @@ use Illuminate\Support\Facades\Auth;
 
 class ShowThisWeekActions extends Component
 {
-    public function remove($actionId)
+    public $confirmingActionDeletion = false;
+    public function deleteAction($confirmingActionDeletion)
     {
-        $action = Action::find($actionId);
+        $action = Action::find($confirmingActionDeletion);
         $action->delete();
+        $this->confirmingActionDeletion = false;
     }
-    
+    public function removeAction($id)
+    {
+        $this->confirmingActionDeletion = $id;
+    }
+
     public function render()
     {
         $today = Carbon::today();

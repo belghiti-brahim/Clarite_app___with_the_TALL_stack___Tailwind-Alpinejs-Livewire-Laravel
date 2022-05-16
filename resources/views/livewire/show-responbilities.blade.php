@@ -30,7 +30,7 @@
         </x-slot>
 
         <x-slot name="content">
-            {{ __('Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+            {{ __('Are you sure you want to this responsibility? Once your responsibility is deleted, all of its projects and actions will be permanently deleted.') }}
         </x-slot>
 
         <x-slot name="footer">
@@ -39,7 +39,7 @@
             </x-jet-secondary-button>
 
             <x-jet-danger-button class="ml-3 btnDelete" wire:click="deleteResponsibility({{$confirmingResponsibilityDeletion}})">
-                {{ __('Delete Account') }}
+                {{ __('Delete') }}
             </x-jet-danger-button>
         </x-slot>
     </x-jet-dialog-modal>

@@ -19,6 +19,8 @@
     @livewireStyles
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v3.x.x/dist/alpine.min.js" defer></script>
+
 </head>
 
 <body class="font-sans antialiased">
@@ -50,9 +52,10 @@
 
     @stack('modals')
     @livewireScripts
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="https://unpkg.com/vanilla-picker@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
+
+
 </body>
 
 </html>

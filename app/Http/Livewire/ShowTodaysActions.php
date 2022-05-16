@@ -10,11 +10,19 @@ use Illuminate\Support\Facades\Auth;
 class ShowTodaysActions extends Component
 {
     public $listeners = ['new-action' => '$refresh'];
+    public $confirmingActionDeletion = false;
+    public $dropy = false;
 
-    public function remove($actionId)
+
+    public function deleteAction($confirmingActionDeletion)
     {
-        $action = Action::find($actionId);
+        $action = Action::find($confirmingActionDeletion);
         $action->delete();
+        $this->confirmingActionDeletion = false;
+    }
+    public function removeAction($id)
+    {
+        $this->confirmingActionDeletion = $id;
     }
 
     public function startAction($actionId)

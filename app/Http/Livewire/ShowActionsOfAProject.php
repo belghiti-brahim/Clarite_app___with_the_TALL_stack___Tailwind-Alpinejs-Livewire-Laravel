@@ -10,16 +10,22 @@ class ShowActionsOfAProject extends Component
 {
 
     public $project;
+    public $confirmingActionDeletion = false;
 
     public function mount(Project $project)
     {
         $this->project = $project;
     }
 
-    public function remove($actionId)
+    public function deleteAction($confirmingActionDeletion)
     {
-        $action = Action::find($actionId);
+        $action = Action::find($confirmingActionDeletion);
         $action->delete();
+        $this->confirmingActionDeletion = false;
+    }
+    public function removeAction($id)
+    {
+        $this->confirmingActionDeletion = $id;
     }
 
     public function startAction($actionId)
@@ -43,14 +49,13 @@ class ShowActionsOfAProject extends Component
         $projectId = $this->project->id;
         $actions = Action::where("project_id", "=", $projectId)->get();
         $allActionsCount = $actions->count();
-        if ($allActionsCount === 0 ) {
+        if ($allActionsCount === 0) {
             $projectCompletionRounded = 0;
         } else {
             $doneActions = $actions->where("context_id", "=", "3")->count();
             $projectCompletion = ($doneActions / $allActionsCount) * 100;
             $projectCompletionRounded = (int)$projectCompletion;
         }
-
 
         return view('livewire.show-actions-of-a-project', compact("actions", "projectCompletionRounded"));
     }
