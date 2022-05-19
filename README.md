@@ -10,4 +10,5 @@ https://tallstack.dev/
 and it's refactoring for this projet I made with some added features: https://github.com/belghiti-brahim/todoapp_laravel.
 
 # the home page
-![Homepage](https://www.loom.com/share/3e0067245efd454a8b4179e8e67bc7cc)
+https://user-images.githubusercontent.com/91473510/169353819-e4c1f4a7-e63c-4aae-86b4-4ab8d9b41e13.mp4
+
