@@ -9,3 +9,5 @@ Or just like a simple todo app where you write actions and you cross them off on
 https://tallstack.dev/
 and it's refactoring for this projet I made with some added features: https://github.com/belghiti-brahim/todoapp_laravel.
 
+# the home page
+![Homepage](https://www.loom.com/share/3e0067245efd454a8b4179e8e67bc7cc)
