@@ -17,3 +17,7 @@ https://user-images.githubusercontent.com/91473510/169353819-e4c1f4a7-e63c-4aae-
 
 https://user-images.githubusercontent.com/91473510/169359657-d11e4f5f-56f4-4184-a1ce-b6a47451e994.mp4
 
+# other ways to use the app
+
+https://user-images.githubusercontent.com/91473510/169360597-68812764-269b-4204-a9bc-032c759fc17b.mp4
+
